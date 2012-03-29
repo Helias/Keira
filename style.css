@@ -1,0 +1,17 @@
+input {
+	color:#00ff00;
+	background-color:green;
+	border-color:white;
+}
+
+hr {
+	color:#00ff00;
+}
+
+p,tr,td {
+	color:#00ff00;
+}
+
+body {
+	background-color:green;
+}

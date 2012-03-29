@@ -4,6 +4,7 @@ if (!(include "db-config.php"))
 	header("location:Connect.html");
 }
 ?>
+<link rel="stylesheet" href="./style.css" type="text/css">
 <title>Quice in PHP</title>
 <table>
 	<tr>
