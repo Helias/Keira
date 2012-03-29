@@ -58,7 +58,7 @@ include "creature_menu.php";
 			echo "
 			<tr><td>{$row['entry']}
 			</td><td>".htmlspecialchars($row['name'])."
-			</td><td>".htmlspecialchars($row['subnamename'])."
+			</td><td>".htmlspecialchars($row['subname'])."
 			</td><td>".htmlspecialchars($row['npcflag'])."
 			</td><td>".htmlspecialchars($row['minlevel'])."
 			</td><td>".htmlspecialchars($row['maxlevel'])."
