@@ -1,17 +1,22 @@
 input {
 	color:#00ff00;
 	background-color:green;
-	border-color:white;
+	border-color:#00fff2;
 }
 
 hr {
 	color:#00ff00;
 }
 
-p,tr,td {
+p,tr,td,select,option {
 	color:#00ff00;
+	border-color:#00fff2;
+}
+
+option,select {
+	background-color:green;
 }
 
 body {
-	background-color:green;
+	background-image:url('bodybackground.png');
 }

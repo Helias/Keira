@@ -5,7 +5,7 @@ if (!(include "db-config.php"))
 }
 ?>
 <link rel="stylesheet" href="./style.css" type="text/css">
-<title>Quice in PHP</title>
+<title>Keira DB WebEditor</title>
 <table>
 	<tr>
 		<td><input type="submit" value="Quest" OnClick="location.href='Quest.php';"></td>

@@ -8,7 +8,7 @@ $query=mysql_query("");
 <p>Code SQL:</p>
 <p>SELECT 
 <select>
-<option value="0"><input type="text" name="select"></option>
+<option value="0">test1</option>
 </select>
 <?php 
 while ($row=mysql_fetch_assoc($query_columns)) 
