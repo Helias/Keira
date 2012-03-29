@@ -35,7 +35,7 @@ if ($entry == "")
 <td>Entry</td><td>difficulty_entry_1</td><td>difficulty_entry_2</td><td>difficulty_entry_3</td>
 </tr>
 <tr>
-<td><input type="text" value="<?php echo $entry; ?>" style="width: 125px; height:23px;" name="entry" ><input type="submit" value="" style="width: 15px; height; 23;" OnClick="location.href='creature_template.php?<?php echo $entry ?>'"></td>
+<td><input type="text" title="creature's id, related to field creature.id" value="<?php echo $entry; ?>" style="width: 125px; height:23px;" name="entry" ><input type="submit" value="" style="width: 15px; height; 23;" OnClick="location.href='creature_template.php?<?php echo $entry ?>'"></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['difficulty_entry_1']); ?>" style="width: 125px; height:23px;" name="difficulty_entry_1"><a href="creature_template.php?entry=<?php echo htmlspecialchars($row['difficulty_entry_1']); ?>"><input type="submit" value="" style="width: 15px; height; 23;"></a></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['difficulty_entry_2']); ?>" style="width: 125px; height:23px;" name="difficulty_entry_2"><a href="creature_template.php?entry=<?php echo htmlspecialchars($row['difficulty_entry_2']); ?>"><input type="submit" value="" style="width: 15px; height; 23;"></a></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['difficulty_entry_3']); ?>" style="width: 125px; height:23px;" name="difficulty_entry_3"><a href="creature_template.php?entry=<?php echo htmlspecialchars($row['difficulty_entry_3']); ?>"><input type="submit" value="" style="width: 15px; height; 23;"></a></td>
@@ -56,7 +56,7 @@ if ($entry == "")
 <td>name</td>
 </tr>
 <tr>
-<td><input type="text" value="<?php echo htmlspecialchars($row['name']); ?>" style="width: 605px; height:23px;" name="name"></td>
+<td><input type="text" title="Base name of the creature" value="<?php echo htmlspecialchars($row['name']); ?>" style="width: 605px; height:23px;" name="name"></td>
 </tr>
 </table>
 <table>
@@ -65,7 +65,7 @@ if ($entry == "")
 <td>IconName</td>
 </tr>
 <tr>
-<td><input type="text" value="<?php echo htmlspecialchars($row['subname']); ?>" style="width: 300px; height:23px;" name="subname"></td>
+<td><input type="text" title="Subname of the creature (if any)" value="<?php echo htmlspecialchars($row['subname']); ?>" style="width: 300px; height:23px;" name="subname"></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['IconName']); ?>" style="width: 300px; height:23px;" name="IconName"></td>
 </tr>
 </table>
@@ -77,10 +77,10 @@ if ($entry == "")
 <td>modelid_4</td>
 </tr>
 <tr>
-<td><input type="text" value="<?php echo htmlspecialchars($row['modelid_1']); ?>" style="width: 150px; height:23px;" name="modelid_1"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['modelid_2']); ?>" style="width: 150px; height:23px;" name="modelid_2"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['modelid_3']); ?>" style="width: 150px; height:23px;" name="modelid_3"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['modelid_4']); ?>" style="width: 150px; height:23px;" name="modelid_4"></td>
+<td><input type="text" title="Graphical model that client must apply on this creature" value="<?php echo htmlspecialchars($row['modelid_1']); ?>" style="width: 150px; height:23px;" name="modelid_1"></td>
+<td><input type="text" title="Graphical model that client must apply on this creature" value="<?php echo htmlspecialchars($row['modelid_2']); ?>" style="width: 150px; height:23px;" name="modelid_2"></td>
+<td><input type="text" title="Graphical model that client must apply on this creature" value="<?php echo htmlspecialchars($row['modelid_3']); ?>" style="width: 150px; height:23px;" name="modelid_3"></td>
+<td><input type="text" title="Graphical model that client must apply on this creature" value="<?php echo htmlspecialchars($row['modelid_4']); ?>" style="width: 150px; height:23px;" name="modelid_4"></td>
 </tr>
 <tr>
 <td>mingold</td>
@@ -89,10 +89,10 @@ if ($entry == "")
 <td>maxlevel</td>
 </tr>
 <tr>
-<td><input type="text" value="<?php echo htmlspecialchars($row['mingold']); ?>" style="width: 150px; height:23px;" name="mingold"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['maxgold']); ?>" style="width: 150px; height:23px;" name="maxgold"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['minlevel']); ?>" style="width: 150px; height:23px;" name="minlevel"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['maxlevel']); ?>" style="width: 150px; height:23px;" name="maxlevel"></td>
+<td><input type="text" title="Minimum gold drop" value="<?php echo htmlspecialchars($row['mingold']); ?>" style="width: 150px; height:23px;" name="mingold"></td>
+<td><input type="text" title="Maximumg gold drop, 0 = creature don't drop any gold" value="<?php echo htmlspecialchars($row['maxgold']); ?>" style="width: 150px; height:23px;" name="maxgold"></td>
+<td><input type="text" title="Creature minimum level. Spawned creature have leve in range from minlevel to maxlevel" value="<?php echo htmlspecialchars($row['minlevel']); ?>" style="width: 150px; height:23px;" name="minlevel"></td>
+<td><input type="text" title="Creature maximum level. Spawned creature have leve in range from minlevel to maxlevel" value="<?php echo htmlspecialchars($row['maxlevel']); ?>" style="width: 150px; height:23px;" name="maxlevel"></td>
 </tr>
 <tr>
 <td>minhealth</td>
@@ -101,10 +101,10 @@ if ($entry == "")
 <td>maxmana</td>
 </tr>
 <tr>
-<td><input type="text" value="<?php echo htmlspecialchars($row['minhealth']); ?>" style="width: 150px; height:23px;" name="minhealth"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['maxhealth']); ?>" style="width: 150px; height:23px;" name="maxhealth"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['minmana']); ?>" style="width: 150px; height:23px;" name="minmana"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['maxmana']); ?>" style="width: 150px; height:23px;" name="maxmana"></td>
+<td><input type="text" title="Minimum creature's health points for creature level equal minlevel. Spawned creature have in linear proportion to level position in range minlevel... maxlevel" value="<?php echo htmlspecialchars($row['minhealth']); ?>" style="width: 150px; height:23px;" name="minhealth"></td>
+<td><input type="text" title="Maximum creature's health points for creature level equal maxlevel. Spawned creature have in linear proportion to level position in range minlevel... maxlevel" value="<?php echo htmlspecialchars($row['maxhealth']); ?>" style="width: 150px; height:23px;" name="maxhealth"></td>
+<td><input type="text" title="Minimum creature's mana points for creature level equal minlevel. Spawned creature have in linear proportion to level position in range minlevel... maxlevel" value="<?php echo htmlspecialchars($row['minmana']); ?>" style="width: 150px; height:23px;" name="minmana"></td>
+<td><input type="text" title="Maximum creature's health points for creature level equal minlevel. Spawned creature have in linear proportion to level position in range minlevel... maxlevel" value="<?php echo htmlspecialchars($row['maxmana']); ?>" style="width: 150px; height:23px;" name="maxmana"></td>
 </tr>
 </table>
 <table>
@@ -119,9 +119,9 @@ if ($entry == "")
 <td style="width: 150px;"></td>
 </tr>
 <tr>
-<td><input type="text" value="<?php echo htmlspecialchars($row['lootid']); ?>" style="width: 150px; height:23px;" name="lootid"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['resistance1']); ?>" style="width: 150px; height:23px;" name="resistance1"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['resistance4']); ?>" style="width: 150px; height:23px;" name="resistance4"></td>
+<td><input type="text" title="Refered to field loot_template.entry lootid does not need to be same as creature entry. Use other lootid if creature should have same loot as other creatures." value="<?php echo htmlspecialchars($row['lootid']); ?>" style="width: 150px; height:23px;" name="lootid"></td>
+<td><input type="text" title="Holy resistence" value="<?php echo htmlspecialchars($row['resistance1']); ?>" style="width: 150px; height:23px;" name="resistance1"></td>
+<td><input type="text" title="Frost resistence" value="<?php echo htmlspecialchars($row['resistance4']); ?>" style="width: 150px; height:23px;" name="resistance4"></td>
 </tr>
 <tr>
 <td>pickpocketloot</td>
@@ -129,9 +129,9 @@ if ($entry == "")
 <td>resistance5</td>
 </tr>
 <tr>
-<td><input type="text" value="<?php echo htmlspecialchars($row['pickpocketloot']); ?>" style="width: 150px; height:23px;" name="pickpocketloot"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['resistance2']); ?>" style="width: 150px; height:23px;" name="resistance2"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['resistance5']); ?>" style="width: 150px; height:23px;" name="resistance5"></td>
+<td><input type="text" title="Refered to field pickpocket_loot_template.entry pickpocketloot does not need to be same as creature entry. Use other pickpocketloot if creature should have same loot as other creatures." value="<?php echo htmlspecialchars($row['pickpocketloot']); ?>" style="width: 150px; height:23px;" name="pickpocketloot"></td>
+<td><input type="text" title="Fire resistence" value="<?php echo htmlspecialchars($row['resistance2']); ?>" style="width: 150px; height:23px;" name="resistance2"></td>
+<td><input type="text" title="Shadow resistence" value="<?php echo htmlspecialchars($row['resistance5']); ?>" style="width: 150px; height:23px;" name="resistance5"></td>
 </tr>
 <tr>
 <td>skinloot</td>
@@ -139,9 +139,9 @@ if ($entry == "")
 <td>resistance6</td>
 </tr>
 <tr>
-<td><input type="text" value="<?php echo htmlspecialchars($row['skinloot']); ?>" style="width: 150px; height:23px;" name="skinloot"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['resistance3']); ?>" style="width: 150px; height:23px;" name="resistance3"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['resistance6']); ?>" style="width: 150px; height:23px;" name="resistance6"></td>
+<td><input type="text" title="Refered to field skinning_loot_template.entry skinloot does not need to be same as creature entry. Use other skinloot if creature should have same loot as other creatures." value="<?php echo htmlspecialchars($row['skinloot']); ?>" style="width: 150px; height:23px;" name="skinloot"></td>
+<td><input type="text" title="Nature resistence" value="<?php echo htmlspecialchars($row['resistance3']); ?>" style="width: 150px; height:23px;" name="resistance3"></td>
+<td><input type="text" title="Arcane resistence" value="<?php echo htmlspecialchars($row['resistance6']); ?>" style="width: 150px; height:23px;" name="resistance6"></td>
 </tr>
 </table>
 <p></p>
