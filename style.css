@@ -1,3 +1,4 @@
+/*
 input {
 	color:#00ff00;
 	background-color:green;
@@ -8,7 +9,7 @@ hr {
 	color:#00ff00;
 }
 
-p,tr,td,select,option {
+p,tr,td,select,option,textarea {
 	color:#00ff00;
 	border-color:#00fff2;
 }
@@ -20,3 +21,4 @@ option,select {
 body {
 	background-image:url('bodybackground.png');
 }
+*/
