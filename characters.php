@@ -26,7 +26,7 @@ if ($guid == "")
 }
 $online=htmlspecialchars($row['online']);
 ?>
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
 <table>
 <tr>
 <td>Guid</td>
@@ -37,7 +37,7 @@ $online=htmlspecialchars($row['online']);
 <td>online</td>
 </tr>
 <tr>
-<td><input type="text" value="<?php echo "$guid"; ?>" name="guid" style="width: 100px;"><input type="submit" value="" style="widht:5px;"></td>
+<td><input type="text" value="<?php echo $guid; ?>" name="guid" style="width: 100px;"><input type="submit" value="" style="widht:5px;"></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['account']); ?>" name="account"></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['name']); ?>" name="name"></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['race']); ?>" name="race" style="width:60px;"></td>
