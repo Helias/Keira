@@ -6,20 +6,17 @@ $entry=$_GET['entry'];
 if ($entry== "")
 {
 	$query=mysql_query("SELECT * FROM creature_template WHERE entry=1");
-	$query2=mysql_query("SELECT Killcredit1,Killcredit2 FROM creature_template WHERE entry=1");
 }
 else
 {
 	$query=mysql_query("SELECT * FROM creature_template WHERE entry=$entry");
-	$query2=mysql_query("SELECT Killcredit1,Killcredit2,questitem1,questitem2,questitem3,questitem4,questitem5,questitem6 FROM creature_template WHERE entry=$entry");
 }
-while (($row=mysql_fetch_array($query)) AND ($rows=mysql_fetch_array($query2)))
+while ($row=mysql_fetch_array($query))
 {
 if ($entry == "")
 {
 	$entry="Write Entry";
 	$row="";
-	$rows="";
 }
 ?>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get" name="form" id="form">
@@ -47,8 +44,8 @@ if ($entry == "")
 <td>Killcredit2</td>
 </tr>
 <tr>
-<td><input type="text" value="<?php echo htmlspecialchars($rows['Killcredit1']); ?>" style="width: 300px; height:23px;" name="Killcredit1"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($rows['Killcredit2']); ?>" style="width: 300px; height:23px;" name="Killcredit2"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['Killcredit1']); ?>" style="width: 300px; height:23px;" name="Killcredit1"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['Killcredit2']); ?>" style="width: 300px; height:23px;" name="Killcredit2"></td>
 </tr>
 </table>
 <table>
@@ -156,8 +153,8 @@ if ($entry == "")
 <td style="width: 102px;"></td>
 </tr>
 <tr>
-<td><input type="text" value="<?php echo htmlspecialchars($rows['questitem1']); ?>" style="width: 150px; height:23px;" name="questitem1"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($rows['questitem2']); ?>" style="width: 150px; height:23px;" name="questitem2"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['questitem1']); ?>" style="width: 150px; height:23px;" name="questitem1"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['questitem2']); ?>" style="width: 150px; height:23px;" name="questitem2"></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['mechanic_immune_mask']); ?>" style="width: 150px; height:23px;" name="mechanic_immune_mask"></td>
 </tr>
 <tr>
@@ -166,8 +163,8 @@ if ($entry == "")
 <td>PetSpellDataId</td>
 </tr>
 <tr>
-<td><input type="text" value="<?php echo htmlspecialchars($rows['questitem3']); ?>" style="width: 150px; height:23px;" name="questitem3"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($rows['questitem4']); ?>" style="width: 150px; height:23px;" name="questitem4"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['questitem3']); ?>" style="width: 150px; height:23px;" name="questitem3"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['questitem4']); ?>" style="width: 150px; height:23px;" name="questitem4"></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['PetSpellDataId']); ?>" style="width: 150px; height:23px;" name="PetSpellDataId"></td>
 </tr>
 <tr>
@@ -176,8 +173,8 @@ if ($entry == "")
 <td>flags_extra</td>
 </tr>
 <tr>
-<td><input type="text" value="<?php echo htmlspecialchars($rows['questitem5']); ?>" style="width: 150px; height:23px;" name="questitem5"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($rows['questitem6']); ?>" style="width: 150px; height:23px;" name="questitem6"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['questitem5']); ?>" style="width: 150px; height:23px;" name="questitem5"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['questitem6']); ?>" style="width: 150px; height:23px;" name="questitem6"></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['flags_extra']); ?>" style="width: 150px; height:23px;" name="flags_extra"></td>
 </tr>
 </table>
@@ -191,8 +188,8 @@ entry='<?php echo htmlspecialchars($row['entry']); ?>';
 difficulty_entry_1='<?php echo htmlspecialchars($row['difficulty_entry_1']); ?>';
 difficulty_entry_2='<?php echo htmlspecialchars($row['difficulty_entry_2']); ?>';
 difficulty_entry_3='<?php echo htmlspecialchars($row['difficulty_entry_3']); ?>';
-Killcredit1='<?php echo htmlspecialchars($rows['Killcredit1']); ?>';
-Killcredit2='<?php echo htmlspecialchars($rows['Killcredit2']); ?>';
+Killcredit1='<?php echo htmlspecialchars($row['Killcredit1']); ?>';
+Killcredit2='<?php echo htmlspecialchars($row['Killcredit2']); ?>';
 name='<?php echo htmlspecialchars($row['name']); ?>';
 subname='<?php echo htmlspecialchars($row['subname']); ?>';
 IconName='<?php echo htmlspecialchars($row['IconName']); ?>';
@@ -217,12 +214,12 @@ resistance6='<?php echo htmlspecialchars($row['resistance6']); ?>';
 lootid='<?php echo htmlspecialchars($row['lootid']); ?>';
 pickpocketloot='<?php echo htmlspecialchars($row['pickpocketloot']); ?>';
 skinloot='<?php echo htmlspecialchars($row['skinloot']); ?>';
-questitem1='<?php echo htmlspecialchars($rows['questitem1']); ?>';
-questitem2='<?php echo htmlspecialchars($rows['questitem2']); ?>';
-questitem3='<?php echo htmlspecialchars($rows['questitem3']); ?>';
-questitem4='<?php echo htmlspecialchars($rows['questitem4']); ?>';
-questitem5='<?php echo htmlspecialchars($rows['questitem5']); ?>';
-questitem6='<?php echo htmlspecialchars($rows['questitem6']); ?>';
+questitem1='<?php echo htmlspecialchars($row['questitem1']); ?>';
+questitem2='<?php echo htmlspecialchars($row['questitem2']); ?>';
+questitem3='<?php echo htmlspecialchars($row['questitem3']); ?>';
+questitem4='<?php echo htmlspecialchars($row['questitem4']); ?>';
+questitem5='<?php echo htmlspecialchars($row['questitem5']); ?>';
+questitem6='<?php echo htmlspecialchars($row['questitem6']); ?>';
 mechanic_immune_mask='<?php echo htmlspecialchars($row['mechanic_immune_mask']); ?>';
 PetSpellDataId='<?php echo htmlspecialchars($row['PetSpellDataId']); ?>';
 flags_extra='<?php echo htmlspecialchars($row['flags_extra']); ?>';
