@@ -233,9 +233,9 @@ if (form.difficulty_entry_2.value != difficulty_entry_2){Script+=" difficulty_en
 if (form.difficulty_entry_3.value != difficulty_entry_3){Script+=" difficulty_entry_3="+form.difficulty_entry_3.value+",";}
 if (form.Killcredit1.value != Killcredit1){Script+=" Killcredit1="+form.Killcredit1.value+",";}
 if (form.Killcredit2.value != Killcredit2){Script+=" Killcredit2="+form.Killcredit2.value+",";}
-if (form.name.value != name){Script+=" name="+form.name.value+",";}
-if (form.subname.value != subname){Script+=" subname="+form.subname.value+",";}
-if (form.IconName.value != IconName){Script+=" IconName="+form.IconName.value+",";}
+if (form.name.value != name){Script+=" name='"+form.name.value+"',";}
+if (form.subname.value != subname){Script+=" subname='"+form.subname.value+"',";}
+if (form.IconName.value != IconName){Script+=" IconName='"+form.IconName.value+"',";}
 if (form.modelid_1.value != modelid_1){Script+=" modelid_1="+form.modelid_1.value+",";}
 if (form.modelid_2.value != modelid_2){Script+=" modelid_2="+form.modelid_2.value+",";}
 if (form.modelid_3.value != modelid_3){Script+=" modelid_3="+form.modelid_3.value+",";}
