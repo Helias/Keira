@@ -1,6 +1,12 @@
 <table>
 	<tr>
-		<td><input type="submit" value="Search" OnClick="location.href='creature_search.php'"></td>
+		<td><input type="submit" value="Search" OnClick="location.href='creature_search.php<?php
+		$entry=$_GET['entry']; 
+		if (($entry !== "") AND ($entry !== NULL))
+		{
+			echo "?entry=".$entry;
+		}
+		?>'"></td>
 		<td><input type="submit" value="Creature Template" OnClick="location.href='creature_template.php<?php
 		$entry=$_GET['entry']; 
 		if (($entry !== "") AND ($entry !== NULL))

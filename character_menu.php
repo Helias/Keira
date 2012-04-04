@@ -13,7 +13,7 @@
 			echo "?guid=".$guid;
 		}
 		?>'"></td>
-		<td><input type="submit" value="script" OnClick="location.href='character_script.php'"></td>
+		<td><input type="submit" value="Script" OnClick="location.href='character_script.php'"></td>
 	</tr>
 </table>
 <table><tr><td><input type="submit" style="height:5px; width: 320px;"></td></tr></table>
