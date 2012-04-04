@@ -12,27 +12,27 @@ include "quest_menu.php";
 		<td>Title</td>
 	</tr>
 	<tr>
-		<td><input type="text" name="Entry"></td>
+		<td><input type="text" name="Id"></td>
 		<td><input type="text" name="Title" style="width: 300px;"></td>
 	</tr>
 </table>
 <table border="1">
 	<tr>
-		<td>Entry</td>
+		<td>Id</td>
 		<td>Title</td>
 		<td>Details</td>
 	</tr>
 	<tr>
 		<td>
 		<?php 
-		$Entry=$_POST['Entry'];
+		$Id=$_POST['Id'];
 		$Title=$_POST['Title'];
 		$x=$_POST['x'];
 		$where="WHERE 1=1";
 
-		if ($Entry)
+		if ($Id)
 		{
-			$where.=" AND entry=$Entry";
+			$where.=" AND Id=$Id";
 		}
 
 		if ($Title)
@@ -44,7 +44,7 @@ include "quest_menu.php";
 		while($row = mysql_fetch_array($query) AND $x==1) 
 		{ 
 			echo "<tr>
-			<td>{$row['entry']}</td>
+			<td>".htmlspecialchars($row['Id'])."</td>
 			<td>".htmlspecialchars($row['Title'])."</td>
 			<td>".htmlspecialchars($row['Details'])."</td>
 			</tr>"; 

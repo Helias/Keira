@@ -1,13 +1,13 @@
 function search(form_ins)
 {
-	entry=false;
+	id=false;
 	title=false;
-	if (form_ins.Entry.value != "")
-	entry=true;
+	if (form_ins.Id.value != "")
+	id=true;
 	if (form_ins.Title.value != "")
 	title=true;
 	
-	if (entry || title)
+	if (id || title)
 	{
 		form_ins.x.value=1;
 		return true;
