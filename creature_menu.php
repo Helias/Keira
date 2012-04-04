@@ -1,7 +1,13 @@
 <table>
 	<tr>
 		<td><input type="submit" value="Search" OnClick="location.href='creature_search.php'"></td>
-		<td><input type="submit" value="Creature Template" OnClick="location.href='creature_template.php'"></td>
+		<td><input type="submit" value="Creature Template" OnClick="location.href='creature_template.php<?php
+		$entry=$_GET['entry']; 
+		if (($entry !== "") AND ($entry !== NULL))
+		{
+			echo "?entry=".$entry;
+		}
+		?>'"></td>
 		<td><input type="submit" value="Creature Location" OnClick="location.href='creature_location.php'"></td>
 		<td><input type="submit" value="Model info" OnClick="location.href='model_info.php'"></td>
 		<td><input type="submit" value="Equip Template" OnClick="location.href='equip_template.php'"></td>

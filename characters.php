@@ -11,7 +11,7 @@ if (!$Databases)
 $guid=$_GET['guid'];
 if ($guid== "")
 {
-	$query=mysql_query("SELECT * FROM characters WHERE guid=1");
+	$query=mysql_query("SELECT * FROM characters");
 }
 else
 {
