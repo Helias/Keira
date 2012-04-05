@@ -59,25 +59,25 @@ if ($entry == "")
 <table>
 <tr>
 <td>subname</td>
-<td>IconName</td>
+<td>iconname</td>
 </tr>
 <tr>
 <td><input type="text" title="Subname of the creature (if any)" value="<?php echo htmlspecialchars($row['subname']); ?>" style="width: 300px; height:23px;" name="subname"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['iconname']); ?>" style="width: 300px; height:23px;" name="IconName"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['iconname']); ?>" style="width: 300px; height:23px;" name="iconname"></td>
 </tr>
 </table>
 <table>
 <tr>
-<td>modelid_1</td>
-<td>modelid_2</td>
-<td>modelid_3</td>
-<td>modelid_4</td>
+<td>modelid1</td>
+<td>modelid2</td>
+<td>modelid3</td>
+<td>modelid4</td>
 </tr>
 <tr>
-<td><input type="text" title="Graphical model that client must apply on this creature" value="<?php echo htmlspecialchars($row['modelid1']); ?>" style="width: 150px; height:23px;" name="modelid_1"></td>
-<td><input type="text" title="Graphical model that client must apply on this creature" value="<?php echo htmlspecialchars($row['modelid2']); ?>" style="width: 150px; height:23px;" name="modelid_2"></td>
-<td><input type="text" title="Graphical model that client must apply on this creature" value="<?php echo htmlspecialchars($row['modelid3']); ?>" style="width: 150px; height:23px;" name="modelid_3"></td>
-<td><input type="text" title="Graphical model that client must apply on this creature" value="<?php echo htmlspecialchars($row['modelid4']); ?>" style="width: 150px; height:23px;" name="modelid_4"></td>
+<td><input type="text" title="Graphical model that client must apply on this creature" value="<?php echo htmlspecialchars($row['modelid1']); ?>" style="width: 150px; height:23px;" name="modelid1"></td>
+<td><input type="text" title="Graphical model that client must apply on this creature" value="<?php echo htmlspecialchars($row['modelid2']); ?>" style="width: 150px; height:23px;" name="modelid2"></td>
+<td><input type="text" title="Graphical model that client must apply on this creature" value="<?php echo htmlspecialchars($row['modelid3']); ?>" style="width: 150px; height:23px;" name="modelid3"></td>
+<td><input type="text" title="Graphical model that client must apply on this creature" value="<?php echo htmlspecialchars($row['modelid4']); ?>" style="width: 150px; height:23px;" name="modelid4"></td>
 </tr>
 <tr>
 <td>mingold</td>
@@ -98,10 +98,10 @@ if ($entry == "")
 <td>Exp</td>
 </tr>
 <tr>
-<td><input type="text" title="Creature's Health Mod" value="<?php echo htmlspecialchars($row['Health_mod']); ?>" style="width: 150px; height:23px;" name="minhealth"></td>
-<td><input type="text" title="Creature's Mana Mod" value="<?php echo htmlspecialchars($row['Mana_mod']); ?>" style="width: 150px; height:23px;" name="maxhealth"></td>
-<td><input type="text" title="Creature's VehicleId" value="<?php echo htmlspecialchars($row['VehicleId']); ?>" style="width: 150px; height:23px;" name="minmana"></td>
-<td><input type="text" title="The expansion table the creatures health value is taken from. Values are from 0 to 2." value="<?php echo htmlspecialchars($row['exp']); ?>" style="width: 150px; height:23px;" name="maxmana"></td>
+<td><input type="text" title="Creature's Health Mod" value="<?php echo htmlspecialchars($row['Health_mod']); ?>" style="width: 150px; height:23px;" name="Health_mod"></td>
+<td><input type="text" title="Creature's Mana Mod" value="<?php echo htmlspecialchars($row['Mana_mod']); ?>" style="width: 150px; height:23px;" name="Mana_mod"></td>
+<td><input type="text" title="Creature's VehicleId" value="<?php echo htmlspecialchars($row['VehicleId']); ?>" style="width: 150px; height:23px;" name="VehicleId"></td>
+<td><input type="text" title="The expansion table the creatures health value is taken from. Values are from 0 to 2." value="<?php echo htmlspecialchars($row['exp']); ?>" style="width: 150px; height:23px;" name="exp"></td>
 </tr>
 </table>
 <table>
@@ -144,37 +144,37 @@ if ($entry == "")
 <p></p>
 <table>
 <tr>
-<td>Questitems</td>
+<td>questItems</td>
 </tr>
 <tr>
-<td>questitem1</td>
-<td>questitem2</td>
+<td>questItem1</td>
+<td>questItem2</td>
 <td>mechanic_immune_mask</td>
 <td style="width: 102px;"></td>
 </tr>
 <tr>
-<td><input type="text" value="<?php echo htmlspecialchars($row['questItem1']); ?>" style="width: 150px; height:23px;" name="questitem1"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['questItem2']); ?>" style="width: 150px; height:23px;" name="questitem2"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['questItem1']); ?>" style="width: 150px; height:23px;" name="questItem1"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['questItem2']); ?>" style="width: 150px; height:23px;" name="questItem2"></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['mechanic_immune_mask']); ?>" style="width: 150px; height:23px;" name="mechanic_immune_mask"></td>
 </tr>
 <tr>
-<td>questitem3</td>
-<td>questitem4</td>
+<td>questItem3</td>
+<td>questItem4</td>
 <td>PetSpellDataId</td>
 </tr>
 <tr>
-<td><input type="text" value="<?php echo htmlspecialchars($row['questItem3']); ?>" style="width: 150px; height:23px;" name="questitem3"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['questItem4']); ?>" style="width: 150px; height:23px;" name="questitem4"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['questItem3']); ?>" style="width: 150px; height:23px;" name="questItem3"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['questItem4']); ?>" style="width: 150px; height:23px;" name="questItem4"></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['PetSpellDataId']); ?>" style="width: 150px; height:23px;" name="PetSpellDataId"></td>
 </tr>
 <tr>
-<td>questitem5</td>
-<td>questitem6</td>
+<td>questItem5</td>
+<td>questItem6</td>
 <td>flags_extra</td>
 </tr>
 <tr>
-<td><input type="text" value="<?php echo htmlspecialchars($row['questItem5']); ?>" style="width: 150px; height:23px;" name="questitem5"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['questItem6']); ?>" style="width: 150px; height:23px;" name="questitem6"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['questItem5']); ?>" style="width: 150px; height:23px;" name="questItem5"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['questItem6']); ?>" style="width: 150px; height:23px;" name="questItem6"></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['flags_extra']); ?>" style="width: 150px; height:23px;" name="flags_extra"></td>
 </tr>
 </table>
@@ -188,23 +188,23 @@ entry='<?php echo htmlspecialchars($row['entry']); ?>';
 difficulty_entry_1='<?php echo htmlspecialchars($row['difficulty_entry_1']); ?>';
 difficulty_entry_2='<?php echo htmlspecialchars($row['difficulty_entry_2']); ?>';
 difficulty_entry_3='<?php echo htmlspecialchars($row['difficulty_entry_3']); ?>';
-Killcredit1='<?php echo htmlspecialchars($row['Killcredit1']); ?>';
-Killcredit2='<?php echo htmlspecialchars($row['Killcredit2']); ?>';
+Killcredit1='<?php echo htmlspecialchars($row['KillCredit1']); ?>';
+Killcredit2='<?php echo htmlspecialchars($row['KillCredit2']); ?>';
 name='<?php echo htmlspecialchars($row['name']); ?>';
 subname='<?php echo htmlspecialchars($row['subname']); ?>';
-IconName='<?php echo htmlspecialchars($row['IconName']); ?>';
-modelid_1='<?php echo htmlspecialchars($row['modelid_1']); ?>';
-modelid_2='<?php echo htmlspecialchars($row['modelid_2']); ?>';
-modelid_3='<?php echo htmlspecialchars($row['modelid_3']); ?>';
-modelid_4='<?php echo htmlspecialchars($row['modelid_4']); ?>';
+iconname='<?php echo htmlspecialchars($row['iconname']); ?>';
+modelid1='<?php echo htmlspecialchars($row['modelid1']); ?>';
+modelid2='<?php echo htmlspecialchars($row['modelid2']); ?>';
+modelid3='<?php echo htmlspecialchars($row['modelid3']); ?>';
+modelid4='<?php echo htmlspecialchars($row['modelid4']); ?>';
 mingold='<?php echo htmlspecialchars($row['mingold']); ?>';
 maxgold='<?php echo htmlspecialchars($row['maxgold']); ?>';
 minlevel='<?php echo htmlspecialchars($row['minlevel']); ?>';
 maxlevel='<?php echo htmlspecialchars($row['maxlevel']); ?>';
-minhealth='<?php echo htmlspecialchars($row['minhealth']); ?>';
-maxhealth='<?php echo htmlspecialchars($row['maxhealth']); ?>';
-minmana='<?php echo htmlspecialchars($row['minmana']); ?>';
-maxmana='<?php echo htmlspecialchars($row['maxmana']); ?>';
+Health_mod='<?php echo htmlspecialchars($row['Health_mod']); ?>';
+Mana_mod='<?php echo htmlspecialchars($row['Mana_mod']); ?>';
+VehicleId='<?php echo htmlspecialchars($row['VehicleId']); ?>';
+exp='<?php echo htmlspecialchars($row['exp']); ?>';
 resistance1='<?php echo htmlspecialchars($row['resistance1']); ?>';
 resistance2='<?php echo htmlspecialchars($row['resistance2']); ?>';
 resistance3='<?php echo htmlspecialchars($row['resistance3']); ?>';
@@ -214,12 +214,12 @@ resistance6='<?php echo htmlspecialchars($row['resistance6']); ?>';
 lootid='<?php echo htmlspecialchars($row['lootid']); ?>';
 pickpocketloot='<?php echo htmlspecialchars($row['pickpocketloot']); ?>';
 skinloot='<?php echo htmlspecialchars($row['skinloot']); ?>';
-questitem1='<?php echo htmlspecialchars($row['questitem1']); ?>';
-questitem2='<?php echo htmlspecialchars($row['questitem2']); ?>';
-questitem3='<?php echo htmlspecialchars($row['questitem3']); ?>';
-questitem4='<?php echo htmlspecialchars($row['questitem4']); ?>';
-questitem5='<?php echo htmlspecialchars($row['questitem5']); ?>';
-questitem6='<?php echo htmlspecialchars($row['questitem6']); ?>';
+questItem1='<?php echo htmlspecialchars($row['questItem1']); ?>';
+questItem2='<?php echo htmlspecialchars($row['questItem2']); ?>';
+questItem3='<?php echo htmlspecialchars($row['questItem3']); ?>';
+questItem4='<?php echo htmlspecialchars($row['questItem4']); ?>';
+questItem5='<?php echo htmlspecialchars($row['questItem5']); ?>';
+questItem6='<?php echo htmlspecialchars($row['questItem6']); ?>';
 mechanic_immune_mask='<?php echo htmlspecialchars($row['mechanic_immune_mask']); ?>';
 PetSpellDataId='<?php echo htmlspecialchars($row['PetSpellDataId']); ?>';
 flags_extra='<?php echo htmlspecialchars($row['flags_extra']); ?>';
@@ -232,19 +232,19 @@ if (form.Killcredit1.value != Killcredit1){Script+=" Killcredit1="+form.Killcred
 if (form.Killcredit2.value != Killcredit2){Script+=" Killcredit2="+form.Killcredit2.value+",";}
 if (form.name.value != name){Script+=" name='"+form.name.value+"',";}
 if (form.subname.value != subname){Script+=" subname='"+form.subname.value+"',";}
-if (form.IconName.value != IconName){Script+=" IconName='"+form.IconName.value+"',";}
-if (form.modelid_1.value != modelid_1){Script+=" modelid_1="+form.modelid_1.value+",";}
-if (form.modelid_2.value != modelid_2){Script+=" modelid_2="+form.modelid_2.value+",";}
-if (form.modelid_3.value != modelid_3){Script+=" modelid_3="+form.modelid_3.value+",";}
-if (form.modelid_4.value != modelid_4){Script+=" modelid_4="+form.modelid_4.value+",";}
+if (form.iconname.value != iconname){Script+=" iconname='"+form.iconname.value+"',";}
+if (form.modelid1.value != modelid1){Script+=" modelid1="+form.modelid1.value+",";}
+if (form.modelid2.value != modelid2){Script+=" modelid2="+form.modelid2.value+",";}
+if (form.modelid3.value != modelid3){Script+=" modelid3="+form.modelid3.value+",";}
+if (form.modelid4.value != modelid4){Script+=" modelid4="+form.modelid4.value+",";}
 if (form.mingold.value != mingold){Script+=" mingold="+form.mingold.value+",";}
 if (form.maxgold.value != maxgold){Script+=" maxgold="+form.maxgold.value+",";}
 if (form.minlevel.value != minlevel){Script+=" minlevel="+form.minlevel.value+",";}
 if (form.maxlevel.value != maxlevel){Script+=" maxlevel="+form.maxlevel.value+",";}
-if (form.minhealth.value != minhealth){Script+=" minhealth="+form.minhealth.value+",";}
-if (form.maxhealth.value != maxhealth){Script+=" maxhealth="+form.maxhealth.value+",";}
-if (form.minmana.value != minmana){Script+=" minmana="+form.minmana.value+",";}
-if (form.maxmana.value != maxmana){Script+=" maxmana="+form.maxmana.value+",";}
+if (form.Health_mod.value != Health_mod){Script+=" Health_mod="+form.Health_mod.value+",";}
+if (form.Mana_mod.value != Mana_mod){Script+=" Mana_mod="+form.Mana_mod.value+",";}
+if (form.VehicleId.value != VehicleId){Script+=" VehicleId="+form.VehicleId.value+",";}
+if (form.exp.value != exp){Script+=" exp="+form.exp.value+",";}
 if (form.lootid.value != lootid){Script+=" lootid="+form.lootid.value+",";}
 if (form.pickpocketloot.value != pickpocketloot){Script+=" pickpocketloot="+form.pickpocketloot.value+",";}
 if (form.skinloot.value != skinloot){Script+=" skinloot="+form.skinloot.value+",";}
@@ -254,12 +254,12 @@ if (form.resistance3.value != resistance3){Script+=" resistance3="+form.resistan
 if (form.resistance4.value != resistance4){Script+=" resistance4="+form.resistance4.value+",";}
 if (form.resistance5.value != resistance5){Script+=" resistance5="+form.resistance5.value+",";}
 if (form.resistance6.value != resistance6){Script+=" resistance6="+form.resistance6.value+",";}
-if (form.questitem1.value != questitem1){Script+=" questitem1="+form.questitem1.value+",";}
-if (form.questitem2.value != questitem2){Script+=" questitem2="+form.questitem2.value+",";}
-if (form.questitem3.value != questitem3){Script+=" questitem3="+form.questitem3.value+",";}
-if (form.questitem4.value != questitem4){Script+=" questitem4="+form.questitem4.value+",";}
-if (form.questitem5.value != questitem5){Script+=" questitem5="+form.questitem5.value+",";}
-if (form.questitem6.value != questitem6){Script+=" questitem6="+form.questitem6.value+",";}
+if (form.questItem1.value != questItem1){Script+=" questItem1="+form.questItem1.value+",";}
+if (form.questItem2.value != questItem2){Script+=" questItem2="+form.questItem2.value+",";}
+if (form.questItem3.value != questItem3){Script+=" questItem3="+form.questItem3.value+",";}
+if (form.questItem4.value != questItem4){Script+=" questItem4="+form.questItem4.value+",";}
+if (form.questItem5.value != questItem5){Script+=" questItem5="+form.questItem5.value+",";}
+if (form.questItem6.value != questItem6){Script+=" questItem6="+form.questItem6.value+",";}
 if (form.mechanic_immune_mask .value != mechanic_immune_mask ){Script+=" mechanic_immune_mask ="+form.mechanic_immune_mask .value+",";}
 if (form.PetSpellDataId.value != PetSpellDataId){Script+=" PetSpellDataId="+form.PetSpellDataId.value+",";}
 if (form.flags_extra.value != flags_extra){Script+=" flags_extra="+form.flags_extra.value+",";}
