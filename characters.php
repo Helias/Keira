@@ -28,18 +28,34 @@ $online=htmlspecialchars($row['online']);
 ?>
 <style type="text/css">
 .input_box {
-	width:125px;
+	width:120px;
 }
 </style>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
 <table>
+<tr>
+<td>online</td>
+<td>is_logout_resting</td>
+<td>at_login</td>
+<td>cinematic</td>
+</tr>
+<tr>
+<td><input type="checkbox" <?php if($online==1){echo "checked=\"true\"";}?> name="online"></td>
+<td><input type="checkbox" <?php if (htmlspecialchars($row['is_logout_resting']) == 1){echo "checked=\"true\"";}?> name="is_logout_resting"></td>
+<td><input type="checkbox" <?php if (htmlspecialchars($row['at_login']) == 1){echo "checked=\"true\"";} ?> name="at_login"></td>
+<td><input type="checkbox" <?php if (htmlspecialchars($row['cinematic']) == 1){echo "checked=\"true\"";} ?> name="cinematic"></td>
+</tr>
 <tr>
 <td>Guid</td>
 <td>Account</td>
 <td>Name</td>
 <td>Race</td>
 <td>class</td>
-<td>online</td>
+<td>gender</td>
+<td>level</td>
+<td>xp</td>
+<td>money</td>
+<td>extra_flags</td>
 </tr>
 <tr>
 <td><input class="input_box" type="text" value="<?php echo $guid; ?>" name="guid" style="width: 100px;"><input type="submit" value=""></td>
@@ -47,18 +63,12 @@ $online=htmlspecialchars($row['online']);
 <td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['name']); ?>" name="name"></td>
 <td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['race']); ?>" name="race"></td>
 <td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['class']); ?>" name="class"></td>
-<td><input type="checkbox" value="online" <?php if($online==1){echo "checked=\"true\"";}?>></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['gender']); ?>" name="class"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['level']); ?>" name="class"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['xp']); ?>" name="class"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['money']); ?>" name="class"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['extra_flags']); ?>" name="class"></td>
 </tr>
-<tr>
-<td>taximask</td>
-</tr>
-</table>
-<table>
-<tr>
-<td><input type="text" value="<?php echo htmlspecialchars($row['taximask']) ?>" name="taximask" style="width: 500px;"></td>
-</tr>
-</table>
-<table>
 <tr>
 <td>map</td>
 <td>position_x</td>
@@ -79,19 +89,13 @@ $online=htmlspecialchars($row['online']);
 <td>totaltime</td>
 <td>leveltime</td>
 <td>logout_time</td>
-<td>rest_bonus</td>
-<td>is_logout_resting</td>
-<td>at_login</td>
-<td>cinematic</td>
+<td>reset_bonus</td>
 </tr>
 <tr>
 <td><input type="text" class="input_box" value="<?php echo htmlspecialchars($row['totaltime']) ?>" name="totaltime"></td>
 <td><input type="text" class="input_box" value="<?php echo htmlspecialchars($row['leveltime']) ?>" name="leveltime"></td>
 <td><input type="text" class="input_box" value="<?php echo htmlspecialchars($row['logout_time']) ?>" name="logout_time"></td>
 <td><input type="text" class="input_box" value="<?php echo htmlspecialchars($row['rest_bonus']) ?>" name="rest_bonus"></td>
-<td><input type="checkbox" <?php if (htmlspecialchars($row['is_logout_resting']) == 1){echo "checked=\"true\"";}?> name="rest_bonus"></td>
-<td><input type="checkbox" <?php if (htmlspecialchars($row['at_login']) == 1){echo "checked=\"true\"";} ?> name="rest_bonus"></td>
-<td><input type="checkbox" <?php if (htmlspecialchars($row['cinematic']) == 1){echo "checked=\"true\"";} ?> name="rest_bonus"></td>
 </tr>
 <tr>
 <td>resettalents_cost</td>
@@ -132,6 +136,14 @@ $online=htmlspecialchars($row['online']);
 <td><input type="text" class="input_box" value="<?php echo htmlspecialchars($row['pending_honor']); ?>" name="resettalents_cost"></td>
 <td><input type="text" class="input_box" value="<?php echo htmlspecialchars($row['last_honor_date']); ?>" name="resettalents_cost"></td>
 <td><input type="text" class="input_box" value="<?php echo htmlspecialchars($row['last_kill_date']); ?>" name="resettalents_cost"></td>
+</tr>
+</table>
+<table>
+<tr>
+<td>taximask</td>
+</tr>
+<tr>
+<td><input type="text" value="<?php echo htmlspecialchars($row['taximask']) ?>" name="taximask" style="width: 500px;"></td>
 </tr>
 </table>
 </form>
