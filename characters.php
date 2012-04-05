@@ -28,7 +28,7 @@ $online=htmlspecialchars($row['online']);
 ?>
 <style type="text/css">
 .input_box {
-	width:120px;
+	width:110px;
 }
 </style>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
@@ -68,6 +68,50 @@ $online=htmlspecialchars($row['online']);
 <td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['xp']); ?>" name="class"></td>
 <td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['money']); ?>" name="class"></td>
 <td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['extra_flags']); ?>" name="class"></td>
+</tr>
+<tr>
+<td>playerBytes</td>
+<td>playerBytes2</td>
+<td>playerFlags</td>
+<td>instance_id</td>
+<td>instance_mode</td>
+<td>death_expire_time</td>
+<td>taxi_path</td>
+<td>knownCurrencies</td>
+<td>watchedFaction</td>
+</tr>
+<tr>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['playerBytes']); ?>" name="playerBytes"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['playerBytes2']); ?>" name="playerBytes2"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['playerFlags']); ?>" name="playerFlags"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['instance_id']); ?>" name="instance_id"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['instance_mode_mask']); ?>" name="instance_mode_mask"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['death_expire_time']); ?>" name="death_expire_time"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['taxi_path']); ?>" name="taxi_path"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['knownCurrencies']); ?>" name="knownCurrencies"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['watchedFaction']); ?>" name="watchedFaction"></td>
+</tr>
+<tr>
+<td>arenaPoints</td>
+<td>totalHonorPoints</td>
+<td>yesterdayHP</td>
+<td>totalKills</td>
+<td>todayKills</td>
+<td>yesterdayKills</td>
+<td>chosenTitle</td>
+<td>drunk</td>
+<td>ammoId</td>
+</tr>
+<tr>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['arenaPoints']); ?>" name="arenaPoints"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['totalHonorPoints']); ?>" name="totalHonorPoints"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['yesterdayHonorPoints']); ?>" name="yesterdayHonorPoints"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['totalKills']); ?>" name="totalKills"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['todayKills']); ?>" name="todayKills"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['yesterdayKills']); ?>" name="yesterdayKills"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['chosenTitle']); ?>" name="chosenTitle"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['drunk']); ?>" name="drunk"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['ammoId']); ?>" name="ammoId"></td>
 </tr>
 <tr>
 <td>map</td>
