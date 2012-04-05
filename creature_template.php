@@ -44,8 +44,8 @@ if ($entry == "")
 <td>Killcredit2</td>
 </tr>
 <tr>
-<td><input type="text" value="<?php echo htmlspecialchars($row['Killcredit1']); ?>" style="width: 300px; height:23px;" name="Killcredit1"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['Killcredit2']); ?>" style="width: 300px; height:23px;" name="Killcredit2"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['KillCredit1']); ?>" style="width: 300px; height:23px;" name="Killcredit1"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['KillCredit2']); ?>" style="width: 300px; height:23px;" name="Killcredit2"></td>
 </tr>
 </table>
 <table>
@@ -63,7 +63,7 @@ if ($entry == "")
 </tr>
 <tr>
 <td><input type="text" title="Subname of the creature (if any)" value="<?php echo htmlspecialchars($row['subname']); ?>" style="width: 300px; height:23px;" name="subname"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['IconName']); ?>" style="width: 300px; height:23px;" name="IconName"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['iconname']); ?>" style="width: 300px; height:23px;" name="IconName"></td>
 </tr>
 </table>
 <table>
@@ -74,10 +74,10 @@ if ($entry == "")
 <td>modelid_4</td>
 </tr>
 <tr>
-<td><input type="text" title="Graphical model that client must apply on this creature" value="<?php echo htmlspecialchars($row['modelid_1']); ?>" style="width: 150px; height:23px;" name="modelid_1"></td>
-<td><input type="text" title="Graphical model that client must apply on this creature" value="<?php echo htmlspecialchars($row['modelid_2']); ?>" style="width: 150px; height:23px;" name="modelid_2"></td>
-<td><input type="text" title="Graphical model that client must apply on this creature" value="<?php echo htmlspecialchars($row['modelid_3']); ?>" style="width: 150px; height:23px;" name="modelid_3"></td>
-<td><input type="text" title="Graphical model that client must apply on this creature" value="<?php echo htmlspecialchars($row['modelid_4']); ?>" style="width: 150px; height:23px;" name="modelid_4"></td>
+<td><input type="text" title="Graphical model that client must apply on this creature" value="<?php echo htmlspecialchars($row['modelid1']); ?>" style="width: 150px; height:23px;" name="modelid_1"></td>
+<td><input type="text" title="Graphical model that client must apply on this creature" value="<?php echo htmlspecialchars($row['modelid2']); ?>" style="width: 150px; height:23px;" name="modelid_2"></td>
+<td><input type="text" title="Graphical model that client must apply on this creature" value="<?php echo htmlspecialchars($row['modelid3']); ?>" style="width: 150px; height:23px;" name="modelid_3"></td>
+<td><input type="text" title="Graphical model that client must apply on this creature" value="<?php echo htmlspecialchars($row['modelid4']); ?>" style="width: 150px; height:23px;" name="modelid_4"></td>
 </tr>
 <tr>
 <td>mingold</td>
@@ -92,16 +92,16 @@ if ($entry == "")
 <td><input type="text" title="Creature maximum level. Spawned creature have leve in range from minlevel to maxlevel" value="<?php echo htmlspecialchars($row['maxlevel']); ?>" style="width: 150px; height:23px;" name="maxlevel"></td>
 </tr>
 <tr>
-<td>minhealth</td>
-<td>maxhealth</td>
-<td>minmana</td>
-<td>maxmana</td>
+<td>Health_Mod</td>
+<td>Mana_Mod</td>
+<td>VehicleId</td>
+<td>Exp</td>
 </tr>
 <tr>
-<td><input type="text" title="Minimum creature's health points for creature level equal minlevel. Spawned creature have in linear proportion to level position in range minlevel... maxlevel" value="<?php echo htmlspecialchars($row['minhealth']); ?>" style="width: 150px; height:23px;" name="minhealth"></td>
-<td><input type="text" title="Maximum creature's health points for creature level equal maxlevel. Spawned creature have in linear proportion to level position in range minlevel... maxlevel" value="<?php echo htmlspecialchars($row['maxhealth']); ?>" style="width: 150px; height:23px;" name="maxhealth"></td>
-<td><input type="text" title="Minimum creature's mana points for creature level equal minlevel. Spawned creature have in linear proportion to level position in range minlevel... maxlevel" value="<?php echo htmlspecialchars($row['minmana']); ?>" style="width: 150px; height:23px;" name="minmana"></td>
-<td><input type="text" title="Maximum creature's health points for creature level equal minlevel. Spawned creature have in linear proportion to level position in range minlevel... maxlevel" value="<?php echo htmlspecialchars($row['maxmana']); ?>" style="width: 150px; height:23px;" name="maxmana"></td>
+<td><input type="text" title="Creature's Health Mod" value="<?php echo htmlspecialchars($row['Health_mod']); ?>" style="width: 150px; height:23px;" name="minhealth"></td>
+<td><input type="text" title="Creature's Mana Mod" value="<?php echo htmlspecialchars($row['Mana_mod']); ?>" style="width: 150px; height:23px;" name="maxhealth"></td>
+<td><input type="text" title="Creature's VehicleId" value="<?php echo htmlspecialchars($row['VehicleId']); ?>" style="width: 150px; height:23px;" name="minmana"></td>
+<td><input type="text" title="The expansion table the creatures health value is taken from. Values are from 0 to 2." value="<?php echo htmlspecialchars($row['exp']); ?>" style="width: 150px; height:23px;" name="maxmana"></td>
 </tr>
 </table>
 <table>
@@ -153,8 +153,8 @@ if ($entry == "")
 <td style="width: 102px;"></td>
 </tr>
 <tr>
-<td><input type="text" value="<?php echo htmlspecialchars($row['questitem1']); ?>" style="width: 150px; height:23px;" name="questitem1"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['questitem2']); ?>" style="width: 150px; height:23px;" name="questitem2"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['questItem1']); ?>" style="width: 150px; height:23px;" name="questitem1"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['questItem2']); ?>" style="width: 150px; height:23px;" name="questitem2"></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['mechanic_immune_mask']); ?>" style="width: 150px; height:23px;" name="mechanic_immune_mask"></td>
 </tr>
 <tr>
@@ -163,8 +163,8 @@ if ($entry == "")
 <td>PetSpellDataId</td>
 </tr>
 <tr>
-<td><input type="text" value="<?php echo htmlspecialchars($row['questitem3']); ?>" style="width: 150px; height:23px;" name="questitem3"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['questitem4']); ?>" style="width: 150px; height:23px;" name="questitem4"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['questItem3']); ?>" style="width: 150px; height:23px;" name="questitem3"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['questItem4']); ?>" style="width: 150px; height:23px;" name="questitem4"></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['PetSpellDataId']); ?>" style="width: 150px; height:23px;" name="PetSpellDataId"></td>
 </tr>
 <tr>
@@ -173,8 +173,8 @@ if ($entry == "")
 <td>flags_extra</td>
 </tr>
 <tr>
-<td><input type="text" value="<?php echo htmlspecialchars($row['questitem5']); ?>" style="width: 150px; height:23px;" name="questitem5"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['questitem6']); ?>" style="width: 150px; height:23px;" name="questitem6"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['questItem5']); ?>" style="width: 150px; height:23px;" name="questitem5"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['questItem6']); ?>" style="width: 150px; height:23px;" name="questitem6"></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['flags_extra']); ?>" style="width: 150px; height:23px;" name="flags_extra"></td>
 </tr>
 </table>
