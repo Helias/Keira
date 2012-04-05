@@ -28,5 +28,5 @@ if (!\$Databases)
 fwrite($file, $testo);
 fclose($file);
 
-header("location:Quest.php");
+header("location:index.php");
 ?>
