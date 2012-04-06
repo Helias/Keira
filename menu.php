@@ -1,7 +1,7 @@
 <?php
 if (!(include "db-config.php"))
 {
-	header("location:Connect.html");
+	header("location:Connect.php");
 }
 ?>
 <link rel="stylesheet" href="./style.css" type="text/css">
@@ -16,11 +16,11 @@ if (!(include "db-config.php"))
 		<td><input type="submit" value="Character" OnClick="location.href='Character.php'"></td>
 		<td><input type="submit" value="SQL" OnClick="location.href='SQL.php'"></td>
 		<td style="width: 50px;"></td>
-		<td><input type="submit" value="Reconnect" OnClick="location.href='Connect.html'"></td>
+		<td><input type="submit" value="Reconnect" OnClick="location.href='Connect.php'"></td>
 	</tr>
 </table>
 <table>
 	<tr>
-		<td><p><input type="submit" style="width: 530px; height:0.5px;"></p></td>
+		<td><p><input type="submit" value="" style="width: 530px; height:0.5px;"></p></td>
 	</tr>
 </table>

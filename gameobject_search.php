@@ -4,7 +4,7 @@ include "menu.php";
 include "gameobject_menu.php";
 ?>
 <script type="text/javascript" src="gameobject_search.js"></script>
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="form_ins" id="form_ins" onsubmit="return search(this)">
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="form_ins" onsubmit="return search(this)">
 <input type="hidden" value="" name="x">
 <?php
 $x=$_POST['x'];

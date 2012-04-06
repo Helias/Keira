@@ -2,11 +2,11 @@
 include "db-config.php";
 include "menu.php";
 include "character_menu.php";
-$Databases=mysql_select_db("$Characters", $db);
+$Databases=mysql_select_db("$Characters", $connect);
 if (!$Databases)
 {
 	echo "Can't connect to the database characters!";
-	header("location:Connect.html");
+	header("location:Connect.php");
 }
 ?>
 <style type="text/css">

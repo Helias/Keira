@@ -2,15 +2,15 @@
 include "db-config.php";
 include "menu.php";
 include "character_menu.php";
-$Databases=mysql_select_db("$Characters", $db);
+$Databases=mysql_select_db("$Characters", $connect);
 if (!$Databases)
 {
 	echo "Can't connect to the database characters!";
-	header("location:Connect.html");
+	header("location:Connect.php");
 }
 ?>
 <script type="text/javascript" src="character_search.js"></script>
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="form_ins" id="form_ins" onsubmit="return search(this)">
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="form_ins" onsubmit="return search(this)">
 <input type="hidden" name="x">
 <table>
 <tr>

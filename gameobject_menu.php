@@ -8,4 +8,4 @@
 		<td><input type="submit" value="Script" OnClick="location.href='gameobject_script.php'"></td>
 	</tr>
 </table>
-<table><tr><td><input type="submit" style="height:5px; width: 550px;"></td></tr></table>
+<table><tr><td><input type="submit" value="" style="height:5px; width: 550px;"></td></tr></table>

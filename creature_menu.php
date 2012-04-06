@@ -33,4 +33,4 @@
 		<td><input type="submit" value="Script" OnClick="location.href='creature_script.php'"></td>
 	</tr>
 </table>
-<table><tr><td><p><input type="submit" style="width: 925px; height:0.5px;"></p></td></tr></table>
+<table><tr><td><p><input type="submit" value="" style="width: 925px; height:0.5px;"></p></td></tr></table>

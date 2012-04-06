@@ -4,7 +4,7 @@ include "menu.php";
 include "creature_menu.php";
 ?>
 <script type="text/javascript" src="creature_search.js"></script>
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="form_ins" id="form_ins" OnSubmit="return search(this)">
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="form_ins" OnSubmit="return search(this)">
 <input type="hidden" name="x">
 <table>
 	<tr>

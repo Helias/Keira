@@ -13,4 +13,4 @@
 		<td><input type="submit" value="Script" OnClick="location.href='item_script.php'"></td>
 	</tr>
 </table>
-<table><tr><td><p><input type="submit" style="width: 1210px; height:0.5px;"></p></td></tr></table>
+<table><tr><td><p><input type="submit" value="" style="width: 1210px; height:0.5px;"></p></td></tr></table>

@@ -11,4 +11,4 @@
 		<td><input type="submit" value="SQL-Script Tab" OnClick="location.href='quest_sql_script_tab.php'"></td>
 	</tr>
 </table>
-<table><tr><td><p><input type="submit" style="width: 980px; height:0.5px;"></p></td></tr></table>
+<table><tr><td><p><input type="submit" value="" style="width: 980px; height:0.5px;"></p></td></tr></table>
