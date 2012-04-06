@@ -35,8 +35,9 @@ table#configuration {
 <td><input type="submit" value="Connect" OnClick="">   <input type="reset" value="Clear"></td>
 </tr>
 </table>
+<br><br>
+<br><br>
 <input type="hidden" value="0" name="x">
-</center>
 </form>
 <script type="text/javascript">
 function config(form)
@@ -78,20 +79,39 @@ $user=$_POST['username'];
 $pwd=$_POST['password'];
 $world=$_POST['world'];
 $characters=$_POST['characters'];
-$nomefile="db-config.php";
-$file = fopen($nomefile, "w+");
-$testo= "<?php
-\$Server=\"$server\";
-\$Username=\"$user\";
-\$Password=\"$pwd\";
-\$Database=\"$world\";
-\$Characters=\"$characters\";
-\$connect=mysql_connect(\$Server, \$Username, \$Password);
-\$Databases=mysql_select_db(\"\$Database\", \$connect);
-?>
-";
-fwrite($file, $testo);
-fclose($file);
-header("location:index.php");
+$connect=mysql_connect($server, $user, $pwd);
+$Databases=mysql_select_db($world, $connect);
+if (!$connect) 
+{
+	echo "mysql_connect : " . mysql_error() . "<br />";
+	echo "Error code :" . mysql_errno() . "<br />";
+}
+else
+{
+	if(!$Databases)
+	{
+		echo "mysql_connect : " . mysql_error() . "<br />";
+		echo "Error code :" . mysql_errno() . "<br />";
+	}
+	else
+	{ 
+		$nomefile="db-config.php";
+		$file = fopen($nomefile, "w+");
+		$testo= "<?php
+		\$Server=\"$server\";
+		\$Username=\"$user\";
+		\$Password=\"$pwd\";
+		\$Database=\"$world\";
+		\$Characters=\"$characters\";
+		\$connect=mysql_connect(\$Server, \$Username, \$Password);
+		\$Databases=mysql_select_db(\"\$Database\", \$connect);
+		?>
+		";
+		fwrite($file, $testo);
+		fclose($file);
+		header("location:index.php"); 
+	}
+}
 }
 ?>
+</center>
