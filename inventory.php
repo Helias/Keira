@@ -41,7 +41,7 @@ else
 			$guid="";
 			$row="";
 		}
-		$items_names=mysql_query("SELECT name FROM $Database.item_template WHERE entry IN (SELECT itemEntry FROM item_instance WHERE guid={$row['item']}) AND owner_guid=$guid");
+		$items_names=mysql_query("SELECT name FROM $Database.item_template WHERE entry IN (SELECT itemEntry FROM item_instance WHERE guid={$row['item']} AND owner_guid=$guid)");
 		while($row_items=mysql_fetch_array($items_names))
 		{
 ?>
