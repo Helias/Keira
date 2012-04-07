@@ -98,14 +98,14 @@ else
 		$nomefile="db-config.php";
 		$file = fopen($nomefile, "w+");
 		$testo= "<?php
-		\$Server=\"$server\";
-		\$Username=\"$user\";
-		\$Password=\"$pwd\";
-		\$Database=\"$world\";
-		\$Characters=\"$characters\";
-		\$connect=mysql_connect(\$Server, \$Username, \$Password);
-		\$Databases=mysql_select_db(\"\$Database\", \$connect);
-		?>
+\$Server=\"$server\";
+\$Username=\"$user\";
+\$Password=\"$pwd\";
+\$Database=\"$world\";
+\$Characters=\"$characters\";
+\$connect=mysql_connect(\$Server, \$Username, \$Password);
+\$Databases=mysql_select_db(\"\$Database\", \$connect);
+?>
 		";
 		fwrite($file, $testo);
 		fclose($file);

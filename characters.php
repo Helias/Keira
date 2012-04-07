@@ -24,7 +24,6 @@ if ($guid == "")
 	$guid="Write guid";
 	$row="";
 }
-$online=htmlspecialchars($row['online']);
 ?>
 <style type="text/css">
 .input_box {
@@ -52,7 +51,7 @@ td {
 <td>cinematic</td>
 </tr>
 <tr>
-<td><input type="checkbox" <?php if($online==1){echo "checked=\"true\"";}?> name="online"></td>
+<td><input type="checkbox" <?php if(htmlspecialchars($row['online'])==1){echo "checked=\"true\"";}?> name="online"></td>
 <td><input type="checkbox" <?php if (htmlspecialchars($row['is_logout_resting']) == 1){echo "checked=\"true\"";}?> name="is_logout_resting"></td>
 <td><input type="checkbox" <?php if (htmlspecialchars($row['at_login']) == 1){echo "checked=\"true\"";} ?> name="at_login"></td>
 <td><input type="checkbox" <?php if (htmlspecialchars($row['cinematic']) == 1){echo "checked=\"true\"";} ?> name="cinematic"></td>
