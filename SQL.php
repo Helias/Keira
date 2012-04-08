@@ -15,6 +15,7 @@ include "menu.php";
 <select id="columns" OnChange="adapt_columns(this.id)">
 <?php
 $id=0;
+$id_2=0;
 for($count=0; $count<2; $count++)
 {
 	if($Database !== $Characters)
@@ -26,6 +27,7 @@ for($count=0; $count<2; $count++)
 		else 
 		{
 			$The_DB=$Characters;
+			$id++;
 		}
 	}
 	else 
@@ -41,14 +43,16 @@ for($count=0; $count<2; $count++)
 		$c=0;
 		$id++;
 		$query_columns=mysql_query("SHOW COLUMNS FROM ".$The_DB.".{$row_tables['Tables_in_'.$The_DB]}");
-		while ($row_columns=mysql_fetch_assoc($query_columns)) 
-		{if($count==1){echo "asd";}
+		while ($row_columns=mysql_fetch_assoc($query_columns))
+		{
+			$id_2++;
 			if($c==0)
 			{
 				$c=1; 
-				echo "<option value=\"".htmlspecialchars($row_tables['Tables_in_'.$The_DB])."\" class=\"bold\" disabled=\"disabled\">".htmlspecialchars($row_tables['Tables_in_'.$The_DB])."</option>\n";
+				echo "<option id=\"$id".htmlspecialchars($row_tables['Tables_in_'.$The_DB])."\" value=\"".htmlspecialchars($row_tables['Tables_in_'.$The_DB])."\" class=\"bold\" disabled=\"disabled\">".htmlspecialchars($row_tables['Tables_in_'.$The_DB])."</option>\n";
+				$id_2++;
 			}
-			echo "<option value=\"".htmlspecialchars($row_columns['Field'])."\" Id=$id>".htmlspecialchars($row_columns['Field'])."</option>\n";
+			echo "<option value=\"".htmlspecialchars($row_columns['Field'])."\" Id=\"$id\" class=\"$id_2\">".htmlspecialchars($row_columns['Field'])."</option>\n";
 		}
 	}
 }
@@ -108,6 +112,6 @@ function adapt_columns(sel)
 function adapt_tables(sel)
 {
 	select=document.getElementById(sel);
-	document.getElementById("columns").selectedIndex=select.options[select.selectedIndex].id;
+	document.getElementById("columns").selectedIndex=document.getElementById(select.options[select.selectedIndex].id).className;
 }
 </script>
