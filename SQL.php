@@ -164,7 +164,7 @@ for($count=0; $count<2; $count++)
 	}
 }
 ?>
-<input type="text" value=" IN ();" id="where_code" OnChange="refresh_script();">
+<input type="text" value="IN ();" id="where_code" OnChange="refresh_script();">
 <input type="submit" value="Search">
 </form>
 </td></tr>
@@ -175,7 +175,7 @@ function refresh_script()
 {
 	var columns=document.getElementById("columns").options[document.getElementById("columns").selectedIndex].value;
 	var table=document.getElementById("tables").options[document.getElementById("tables").selectedIndex].value;
-	var where=document.getElementById("where").options[document.getElementById("where").selectedIndex].value+document.getElementById("where_code").value;
+	var where=document.getElementById("where").options[document.getElementById("where").selectedIndex].value+" "+document.getElementById("where_code").value;
 	var code="SELECT "+columns+" FROM "+table+" WHERE "+where;
 	if (columns=="All") { columns="*"; }
 	if (where==document.getElementById("where").options[document.getElementById("where").selectedIndex].value) { code="SELECT "+columns+" FROM "+table; }
@@ -202,11 +202,16 @@ function adapt_columns2(sel)
 function adapt_tables(sel)
 {
 	select=document.getElementById(sel);
-	document.getElementById("columns").selectedIndex=document.getElementById(select.options[select.selectedIndex].id).className;
+	if(document.getElementById("columns").options[document.getElementById("columns").selectedIndex].value != "*")
+	{
+		document.getElementById("columns").selectedIndex=document.getElementById(select.options[select.selectedIndex].id).className;
+	}
+	
 	document.getElementById("where").selectedIndex=document.getElementById(select.options[select.selectedIndex].id).className;
 	refresh_script();
 }
 </script>
+<div style="width:100%; height:60%; overflow:auto;">
 <table border="1">
 <?php
 $script=$_POST['script'];
@@ -233,3 +238,4 @@ if($x==1)
 }
 ?>
 </table>
+</div>
