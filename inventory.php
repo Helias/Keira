@@ -39,14 +39,12 @@ else
 	while ($row=mysql_fetch_array($query))
 	{
 		$count++;
-		if($count==1){$asd=33447;}else{$asd=33470;}
 		if ($guid == "")
 		{
 			$guid="";
 			$row="";
 		}
-//		$items_names=mysql_query("SELECT name FROM $Database.item_template WHERE entry IN (SELECT itemEntry FROM item_instance WHERE guid={$row['item']} AND owner_guid=$guid)");
-		$items_names=mysql_query("SELECT name FROM $Database.item_template WHERE entry IN ($asd)");
+		$items_names=mysql_query("SELECT name FROM $Database.item_template WHERE entry IN (SELECT itemEntry FROM item_instance WHERE guid={$row['item']} AND owner_guid=$guid)");
 		while($row_items=mysql_fetch_array($items_names))
 		{
 ?>
