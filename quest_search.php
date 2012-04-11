@@ -53,5 +53,5 @@ include "quest_menu.php";
 		</td>
 	</tr>
 </table>
-<p align="left"><input type="submit" value="Search"></p></p>
+<p align="left"><input type="submit" value="Search"></p>
 </form>

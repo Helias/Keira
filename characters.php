@@ -41,6 +41,11 @@ td {
 .little {
 	width:20px;
 }
+
+.bold {
+	font-weight:bold;
+	color:black;
+}
 </style>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get" name="form">
 <table>
@@ -74,18 +79,41 @@ td {
 <td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['name']); ?>" name="name"></td>
 <td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['race']); ?>" name="race">
 <select class="little" id="race" OnChange="get_value(this.id)">
-<option value="ID Value">ID Value</option>
-<option value="1">1 Human</option><option value="2">2  Orc</option><option  value="3">3 Dwarf</option><option  value="4">4 Night Elf</option><option  value="5">5 Scourge</option>
-<option  value="6">6 Tauren</option><option  value="7">7 Gnome</option><option  value="8">8 Troll</option><option  value="9">9 Goblin</option><option  value="10">10 BloodElf</option>
-<option  value="11">11 Draenei</option><option  value="12">12 FelOrc</option><option  value="13">13 Naga_</option><option  value="14">14 Broken</option><option  value="15">15 Skeleton</option>
-<option  value="16">16 Vrykul</option><option  value="17">17 Tuskarr</option><option  value="18">18 ForestTroll</option><option  value="19">19 Taunka</option><option  value="20">20 NorthrendSkeleton</option>
+<option value="ID Value" disabled="disabled" class="bold">ID Value</option>
+<option value="1">1 Human</option><option value="2">
+2  Orc</option><option  value="3">3 Dwarf</option>
+<option  value="4">4 Night Elf</option><option  value="5">5 Scourge</option>
+<option  value="6">6 Tauren</option>
+<option  value="7">7 Gnome</option>
+<option  value="8">8 Troll</option>
+<option  value="9">9 Goblin</option>
+<option  value="10">10 BloodElf</option>
+<option  value="11">11 Draenei</option>
+<option  value="12">12 FelOrc</option>
+<option  value="13">13 Naga_</option>
+<option  value="14">14 Broken</option>
+<option  value="15">15 Skeleton</option>
+<option  value="16">16 Vrykul</option>
+<option  value="17">17 Tuskarr</option>
+<option  value="18">18 ForestTroll</option>
+<option  value="19">19 Taunka</option>
+<option  value="20">20 NorthrendSkeleton</option>
 <option  value="21">21 IceTroll</option>
 </select>
 </td>
 <td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['class']); ?>" name="class">
 <select class="little" id="class" OnChange="get_value(this.id)">
-<option value="ID Value">ID Value</option><option value="1">1 Warrior</option><option value="2">2 Paladin</option><option value="3">3 Hunter</option><option value="4">4 Rogue</option><option value="5">5 Priest</option>
-<option value="6">6 Death Knight</option><option value="7">7 Shaman</option><option value="8">8 Mage</option><option value="9">9 Warlock</option><option value="11">11 Druid</option>
+<option value="ID Value" disabled="disabled" class="bold">ID Value</option>
+<option value="1">1 Warrior</option>
+<option value="2">2 Paladin</option>
+<option value="3">3 Hunter</option>
+<option value="4">4 Rogue</option>
+<option value="5">5 Priest</option>
+<option value="6">6 Death Knight</option>
+<option value="7">7 Shaman</option>
+<option value="8">8 Mage</option>
+<option value="9">9 Warlock</option>
+<option value="11">11 Druid</option>
 </select>
 </td>
 <td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['gender']); ?>" name="class"></td>
@@ -177,7 +205,7 @@ td {
 <td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['activespec']); ?>" name="activespec"></td>
 <td><input type="text" class="input_box" value="<?php echo htmlspecialchars($row['map']) ?>" name="map">
 <select class="little" id="map" OnChange="get_value(this.id)">
-<option value="ID Value">ID Value</option>
+<option value="ID Value" disabled="disabled" class="bold">ID Value</option>
 <option value="0">0 Eastern Kingdoms</option>
 <option value="1">1 Kalimdor</option>
 <option value="13">13 Testing</option>
@@ -320,7 +348,7 @@ td {
 <td><input type="text" class="input_box" value="<?php echo htmlspecialchars($row['position_z']) ?>" name="position_z"></td>
 <td><input type="text" class="input_box" value="<?php echo htmlspecialchars($row['orientation']) ?>" name="orientation"></td>
 <td><select class="little" id="zone" OnChange="get_value(this.id)">
-<option value="ID Value">ID Value</option>
+<option value="ID Value" disabled="disabled" class="bold">ID Value</option>
 <option value="1">1 Dun Morogh</option>
 <option value="2">2 Longshore</option>
 <option value="3">3 Badlands</option>
@@ -2688,10 +2716,7 @@ td {
 function get_value(select)
 {
 	selects=document.getElementById(select);
-	if(selects.options[selects.selectedIndex].value != "ID Value")
-	{
-		document.getElementsByName(select)[0].value=selects.options[selects.selectedIndex].value;
-	}
+	document.getElementsByName(select)[0].value=selects.options[selects.selectedIndex].value;
 }
 </script>
 <p align="right"><input type="submit" value="Show Character Script"></p>

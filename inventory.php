@@ -146,6 +146,7 @@ function exchange()
 	tr.cells[1].innerHTML=document.getElementById("bag").value;
 	tr.cells[2].innerHTML=document.getElementById("slot").value;
 	tr.cells[3].innerHTML=document.getElementById("item").value;
+	tr.cells[4].innerHTML="";
 }
 
 function del()

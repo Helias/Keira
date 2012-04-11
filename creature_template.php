@@ -19,6 +19,20 @@ if ($entry == "")
 	$row="";
 }
 ?>
+<style type="text/css">
+.bold {
+	font-weight:bold; 
+	color:black;
+}
+
+.little {
+	width:20px;
+}
+
+.target {
+	background-color:deepskyblue;
+}
+</style>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get" name="form" id="form">
 <table>
 <tr>
@@ -155,7 +169,42 @@ if ($entry == "")
 <tr>
 <td><input type="text" value="<?php echo htmlspecialchars($row['questItem1']); ?>" style="width: 150px; height:23px;" name="questItem1"></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['questItem2']); ?>" style="width: 150px; height:23px;" name="questItem2"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['mechanic_immune_mask']); ?>" style="width: 150px; height:23px;" name="mechanic_immune_mask"></td>
+<td><input type="text" value="<?php echo htmlspecialchars($row['mechanic_immune_mask']); ?>" style="width: 150px; height:23px;" name="mechanic_immune_mask">
+<select class="little" id="mechanic_immune_mask" OnChange="get_value_flag(this.id)">
+<option value="-1" selected="selected" disabled="disabled" class="bold">Mechanic</option>
+<option value="1">CHARM</option>
+<option value="2">DISORIENTED</option>
+<option value="4">DISARM</option>
+<option value="8">DISTRACT</option>
+<option value="16">FEAR</option>
+<option value="32">GRIP</option>
+<option value="64">ROOT</option>
+<option value="128">PACIFY</option>
+<option value="256">SILENCE</option>
+<option value="512">SLEEP</option>
+<option value="1024">SNARE</option>
+<option value="2048">STUN</option>
+<option value="4096">FREEZE</option>
+<option value="8192">KNOCKOUT</option>
+<option value="16384">BLEED</option>
+<option value="32768">BANDAGE</option>
+<option value="65536">POLYMORPH</option>
+<option value="131072">BANISH</option>
+<option value="262144">SHIELD</option>
+<option value="524288">SHACKLE</option>
+<option value="1048576">MOUNT</option>
+<option value="2097152">INFECTED</option>
+<option value="4194304">TURN</option>
+<option value="8388608">HORROR</option>
+<option value="16777216">INVULNERABILITY</option>
+<option value="33554432">INTERRUPT</option>
+<option value="67108864">DAZE</option>
+<option value="134217728">DISCOVERY</option>
+<option value="268435456">IMMUNE_SHIELD</option>
+<option value="536870912">SAPPED</option>
+<option value="1073741824">ENRAGED</option>
+</select>
+</td>
 </tr>
 <tr>
 <td>questItem3</td>
@@ -181,7 +230,23 @@ if ($entry == "")
 <input type="hidden" name="code">
 </form>
 <script type="text/javascript">
-<!--
+function get_value_flag(select)
+{
+	selects=document.getElementById(select);
+	if (selects.options[selects.selectedIndex].className != "target")
+	{
+		document.getElementsByName(select)[0].value=parseInt(document.getElementsByName(select)[0].value)+parseInt(selects.options[selects.selectedIndex].value);
+		selects.options[selects.selectedIndex].className="target";
+		selects.selectedIndex=0;
+	}
+	else if (selects.options[selects.selectedIndex].className=="target")
+	{
+		document.getElementsByName(select)[0].value=parseInt(document.getElementsByName(select)[0].value)-parseInt(selects.options[selects.selectedIndex].value);
+		selects.options[selects.selectedIndex].className="";
+		selects.selectedIndex=0;
+	}
+}
+
 function Scripts()
 {
 entry='<?php echo htmlspecialchars($row['entry']); ?>';
@@ -267,6 +332,7 @@ if (form.flags_extra.value != flags_extra){Script+=" flags_extra="+form.flags_ex
 if (form.entry.value==entry){Where=" WHERE entry="+entry;}
 else{Where=" WHERE entry="+form.entry.value;}
 
+Script=Script.substr(0, Script.length-1);
 Script+=Where;
 if (isNaN(form.entry.value) ==true){Script=""; Where="";}
 
@@ -274,7 +340,6 @@ form.code.value=Script;
 
 location.href='creature_script.php?code='+Script;
 }
--->
 </script>
 <p align="right"><input type="submit" value="Show Creature Template Script" OnClick='Scripts()'></p>
 <?php
