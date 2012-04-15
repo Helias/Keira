@@ -52,13 +52,11 @@ td {
 <tr>
 <td>online</td>
 <td>is_logout_resting</td>
-<td>at_login</td>
 <td>cinematic</td>
 </tr>
 <tr>
 <td><input type="checkbox" <?php if(htmlspecialchars($row['online'])==1){echo "checked=\"true\"";}?> name="online"></td>
 <td><input type="checkbox" <?php if (htmlspecialchars($row['is_logout_resting']) == 1){echo "checked=\"true\"";}?> name="is_logout_resting"></td>
-<td><input type="checkbox" <?php if (htmlspecialchars($row['at_login']) == 1){echo "checked=\"true\"";} ?> name="at_login"></td>
 <td><input type="checkbox" <?php if (htmlspecialchars($row['cinematic']) == 1){echo "checked=\"true\"";} ?> name="cinematic"></td>
 </tr>
 <tr>
@@ -77,31 +75,31 @@ td {
 <td><input class="input_box" type="text" value="<?php echo $guid; ?>" name="guid" style="width: 100px;"><input type="submit" value=""></td>
 <td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['account']); ?>" name="account"></td>
 <td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['name']); ?>" name="name"></td>
-<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['race']); ?>" name="race">
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['race']); ?>" name="races">
 <select class="little" id="race" OnChange="get_value(this.id)">
 <option value="ID Value" disabled="disabled" class="bold">ID Value</option>
 <option value="1">1 Human</option><option value="2">
 2  Orc</option><option  value="3">3 Dwarf</option>
-<option  value="4">4 Night Elf</option><option  value="5">5 Scourge</option>
-<option  value="6">6 Tauren</option>
-<option  value="7">7 Gnome</option>
-<option  value="8">8 Troll</option>
-<option  value="9">9 Goblin</option>
-<option  value="10">10 BloodElf</option>
-<option  value="11">11 Draenei</option>
-<option  value="12">12 FelOrc</option>
-<option  value="13">13 Naga_</option>
-<option  value="14">14 Broken</option>
-<option  value="15">15 Skeleton</option>
-<option  value="16">16 Vrykul</option>
-<option  value="17">17 Tuskarr</option>
-<option  value="18">18 ForestTroll</option>
-<option  value="19">19 Taunka</option>
-<option  value="20">20 NorthrendSkeleton</option>
-<option  value="21">21 IceTroll</option>
+<option value="4">4 Night Elf</option><option  value="5">5 Scourge</option>
+<option value="6">6 Tauren</option>
+<option value="7">7 Gnome</option>
+<option value="8">8 Troll</option>
+<option value="9">9 Goblin</option>
+<option value="10">10 BloodElf</option>
+<option value="11">11 Draenei</option>
+<option value="12">12 FelOrc</option>
+<option value="13">13 Naga_</option>
+<option value="14">14 Broken</option>
+<option value="15">15 Skeleton</option>
+<option value="16">16 Vrykul</option>
+<option value="17">17 Tuskarr</option>
+<option value="18">18 ForestTroll</option>
+<option value="19">19 Taunka</option>
+<option value="20">20 NorthrendSkeleton</option>
+<option value="21">21 IceTroll</option>
 </select>
 </td>
-<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['class']); ?>" name="class">
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['class']); ?>" name="classes">
 <select class="little" id="class" OnChange="get_value(this.id)">
 <option value="ID Value" disabled="disabled" class="bold">ID Value</option>
 <option value="1">1 Warrior</option>
@@ -116,11 +114,11 @@ td {
 <option value="11">11 Druid</option>
 </select>
 </td>
-<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['gender']); ?>" name="class"></td>
-<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['level']); ?>" name="class"></td>
-<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['xp']); ?>" name="class"></td>
-<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['money']); ?>" name="class"></td>
-<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['extra_flags']); ?>" name="class"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['gender']); ?>" name="gender"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['level']); ?>" name="level"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['xp']); ?>" name="xp"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['money']); ?>" name="money"></td>
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['extra_flags']); ?>" name="extra_flags"></td>
 </tr>
 <tr>
 <td>playerBytes</td>
@@ -203,7 +201,7 @@ td {
 </tr>
 <tr>
 <td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['activespec']); ?>" name="activespec"></td>
-<td><input type="text" class="input_box" value="<?php echo htmlspecialchars($row['map']) ?>" name="map">
+<td><input type="text" class="input_box" value="<?php echo htmlspecialchars($row['map']) ?>" name="maps">
 <select class="little" id="map" OnChange="get_value(this.id)">
 <option value="ID Value" disabled="disabled" class="bold">ID Value</option>
 <option value="0">0 Eastern Kingdoms</option>
@@ -2657,7 +2655,7 @@ td {
 <option value="4910">4910 Frostmourne</option>
 <option value="4987">4987 The Ruby Sanctum</option>
 </select>
-<input type="text" class="input_box" value="<?php echo htmlspecialchars($row['zone']) ?>" name="zone" style="width: 90px;"></td>
+<input type="text" class="input_box" value="<?php echo htmlspecialchars($row['zone']) ?>" name="zones" style="width: 90px;"></td>
 <td><input type="text" class="input_box" value="<?php echo htmlspecialchars($row['logout_time']) ?>" name="logout_time"></td>
 <td><input type="text" class="input_box" value="<?php echo htmlspecialchars($row['rest_bonus']) ?>" name="rest_bonus"></td>
 <td><input type="text" class="input_box" value="<?php echo htmlspecialchars($row['leveltime']) ?>" name="leveltime"></td>
@@ -2711,15 +2709,176 @@ td {
 <tr><td>taximask</td></tr>
 <tr><td><input type="text" value="<?php echo htmlspecialchars($row['taximask']) ?>" name="taximask" class="long_width"></td></tr>
 </table>
+<input type="hidden" name="code">
 </form>
 <script type="text/javascript">
 function get_value(select)
 {
 	selects=document.getElementById(select);
-	document.getElementsByName(select)[0].value=selects.options[selects.selectedIndex].value;
+	document.getElementsByName(select+"s")[0].value=selects.options[selects.selectedIndex].value;
+}
+
+function Scripts()
+{
+guid='<?php echo htmlspecialchars($row['guid']);?>';
+account='<?php echo htmlspecialchars($row['account']);?>';
+name='<?php echo htmlspecialchars($row['name']);?>';
+race='<?php echo htmlspecialchars($row['race']);?>';
+classes='<?php echo htmlspecialchars($row['class']);?>';
+gender='<?php echo htmlspecialchars($row['gender']);?>';
+level='<?php echo htmlspecialchars($row['level']);?>';
+xp='<?php echo htmlspecialchars($row['xp']);?>';
+money='<?php echo htmlspecialchars($row['money']);?>';
+playerBytes='<?php echo htmlspecialchars($row['playerBytes']);?>';
+playerBytes2='<?php echo htmlspecialchars($row['playerBytes2']);?>';
+playerFlags='<?php echo htmlspecialchars($row['playerFlags']);?>';
+position_x='<?php echo htmlspecialchars($row['position_x']);?>';
+position_y='<?php echo htmlspecialchars($row['position_y']);?>';
+position_z='<?php echo htmlspecialchars($row['position_z']);?>';
+map='<?php echo htmlspecialchars($row['map']);?>';
+instance_id='<?php echo htmlspecialchars($row['instance_id']);?>';
+instance_mode_mask='<?php echo htmlspecialchars($row['instance_mode_mask']);?>';
+orientation='<?php echo htmlspecialchars($row['orientation']);?>';
+taximask='<?php echo htmlspecialchars($row['taximask']);?>';
+online='<?php echo htmlspecialchars($row['online']);?>';
+cinematic='<?php echo htmlspecialchars($row['cinematic']);?>';
+totaltime='<?php echo htmlspecialchars($row['totaltime']);?>';
+leveltime='<?php echo htmlspecialchars($row['leveltime']);?>';
+logout_time='<?php echo htmlspecialchars($row['logout_time']);?>';
+is_logout_resting='<?php echo htmlspecialchars($row['is_logout_resting']);?>';
+rest_bonus='<?php echo htmlspecialchars($row['rest_bonus']);?>';
+resettalents_cost='<?php echo htmlspecialchars($row['resettalents_cost']);?>';
+resettalents_time='<?php echo htmlspecialchars($row['resettalents_time']);?>';
+trans_x='<?php echo htmlspecialchars($row['trans_x']);?>';
+trans_y='<?php echo htmlspecialchars($row['trans_y']);?>';
+trans_z='<?php echo htmlspecialchars($row['trans_z']);?>';
+trans_o='<?php echo htmlspecialchars($row['trans_o']);?>';
+transguid='<?php echo htmlspecialchars($row['transguid']);?>';
+extra_flags='<?php echo htmlspecialchars($row['extra_flags']);?>';
+stable_slots='<?php echo htmlspecialchars($row['stable_slots']);?>';
+at_login='<?php echo htmlspecialchars($row['at_login']);?>';
+zone='<?php echo htmlspecialchars($row['zone']);?>';
+death_expire_time='<?php echo htmlspecialchars($row['death_expire_time']);?>';
+taxi_path='<?php echo htmlspecialchars($row['taxi_path']);?>';
+arenaPoints='<?php echo htmlspecialchars($row['arenaPoints']);?>';
+totalHonorPoints='<?php echo htmlspecialchars($row['totalHonorPoints']);?>';
+yesterdayHonorPoints='<?php echo htmlspecialchars($row['yesterdayHonorPoints']);?>';
+totalKills='<?php echo htmlspecialchars($row['totalKills']);?>';
+todayKills='<?php echo htmlspecialchars($row['todayKills']);?>';
+yesterdayKills='<?php echo htmlspecialchars($row['yesterdayKills']);?>';
+chosenTitle='<?php echo htmlspecialchars($row['chosenTitle']);?>';
+knownCurrencies='<?php echo htmlspecialchars($row['knownCurrencies']);?>';
+watchedFaction='<?php echo htmlspecialchars($row['watchedFaction']);?>';
+drunk='<?php echo htmlspecialchars($row['drunk']);?>';
+health='<?php echo htmlspecialchars($row['health']);?>';
+power1='<?php echo htmlspecialchars($row['power1']);?>';
+power2='<?php echo htmlspecialchars($row['power2']);?>';
+power3='<?php echo htmlspecialchars($row['power3']);?>';
+power4='<?php echo htmlspecialchars($row['power4']);?>';
+power5='<?php echo htmlspecialchars($row['power5']);?>';
+power6='<?php echo htmlspecialchars($row['power6']);?>';
+power7='<?php echo htmlspecialchars($row['power7']);?>';
+latency='<?php echo htmlspecialchars($row['latency']);?>';
+speccount='<?php echo htmlspecialchars($row['speccount']);?>';
+activespec='<?php echo htmlspecialchars($row['activespec']);?>';
+exploredZones='<?php echo htmlspecialchars($row['exploredZones']);?>';
+equipmentCache='<?php echo htmlspecialchars($row['equipmentCache']);?>';
+ammoId='<?php echo htmlspecialchars($row['ammoId']);?>';
+knownTitles='<?php echo htmlspecialchars($row['knownTitles']);?>';
+actionBars='<?php echo htmlspecialchars($row['actionBars']);?>';
+grantableLevels='<?php echo htmlspecialchars($row['grantableLevels']);?>';
+deleteInfos_Account='<?php echo htmlspecialchars($row['deleteInfos_Account']);?>';
+deleteInfos_Name='<?php echo htmlspecialchars($row['deleteInfos_Name']);?>';
+deleteDate='<?php echo htmlspecialchars($row['deleteDate']);?>';
+
+Script="UPDATE `characters` SET";
+//checkbox
+var check;
+if (form.online.checked==false){check=0;} else { check=1; }
+if (form.online.checked != online){Script+=" `online`="+check+",";}
+if (form.is_logout_resting.checked==false){ check=0;}else {check=1;}
+if (form.is_logout_resting.checked != is_logout_resting){Script+=" `is_logout_resting`="+check+",";}
+if (form.cinematic.checked==false){ check=0;}else {check=1;}
+if (form.cinematic.checked != cinematic){Script+=" `cinematic`="+check+",";}
+
+if (form.guid.value != guid){Script+=" `guid`="+form.guid.value+",";}
+if (form.account.value != account){Script+=" `account`="+form.account.value+",";}
+if (form.name.value != name){Script+=" `name`='"+form.name.value+"',";}
+if (form.races.value != race){Script+=" `race`="+form.races.value+",";}
+if (form.classes.value != classes){Script+=" `class`="+form.classes.value+",";}
+if (form.gender.value != gender){Script+=" `gender`="+form.gender.value+",";}
+if (form.level.value != level){Script+=" `level`="+form.level.value+",";}
+if (form.xp.value != xp){Script+=" `xp`="+form.xp.value+",";}
+if (form.money.value != money){Script+=" `money`="+form.money.value+",";}
+if (form.playerBytes.value != playerBytes){Script+=" `playerBytes`="+form.playerBytes.value+",";}
+if (form.playerBytes2.value != playerBytes2){Script+=" `playerBytes2`="+form.playerBytes2.value+",";}
+if (form.playerFlags.value != playerFlags){Script+=" `playerFlags`="+form.playerFlags.value+",";}
+if (form.position_x.value != position_x){Script+=" `position_x`="+form.position_x.value+",";}
+if (form.position_y.value != position_y){Script+=" `position_y`="+form.position_y.value+",";}
+if (form.position_z.value != position_z){Script+=" `position_z`="+form.position_z.value+",";}
+if (form.maps.value != map){Script+=" `map`="+form.maps.value+",";}
+if (form.instance_id.value != instance_id){Script+=" `instance_id`="+form.instance_id.value+",";}
+if (form.instance_mode_mask.value != instance_mode_mask){Script+=" `instance_mode_mask`="+form.instance_mode_mask.value+",";}
+if (form.orientation.value != orientation){Script+=" `orientation`="+form.orientation.value+",";}
+if (form.taximask.value != taximask){Script+=" `taximask`="+form.taximask.value+",";}
+if (form.totaltime.value != totaltime){Script+=" `totaltime`="+form.totaltime.value+",";}
+if (form.leveltime.value != leveltime){Script+=" `leveltime`="+form.leveltime.value+",";}
+if (form.logout_time.value != logout_time){Script+=" `logout_time`="+form.logout_time.value+",";}
+if (form.rest_bonus.value != rest_bonus){Script+=" `rest_bonus`="+form.rest_bonus.value+",";}
+if (form.resettalents_cost.value != resettalents_cost){Script+=" `resettalents_cost`="+form.resettalents_cost.value+",";}
+if (form.resettalents_time.value != resettalents_time){Script+=" `resettalents_time`="+form.resettalents_time.value+",";}
+if (form.trans_x.value != trans_x){Script+=" `trans_x`="+form.trans_x.value+",";}
+if (form.trans_y.value != trans_y){Script+=" `trans_y`="+form.trans_y.value+",";}
+if (form.trans_z.value != trans_z){Script+=" `trans_z`="+form.trans_z.value+",";}
+if (form.trans_o.value != trans_o){Script+=" `trans_o`="+form.trans_o.value+",";}
+if (form.transguid.value != transguid){Script+=" `transguid`="+form.transguid.value+",";}
+if (form.extra_flags.value != extra_flags){Script+=" `extra_flags`="+form.extra_flags.value+",";}
+if (form.stable_slots.value != stable_slots){Script+=" `stable_slots`="+form.stable_slots.value+",";}
+if (form.at_login.value != at_login){Script+=" `at_login`="+form.at_login.value+",";}
+if (form.zones.value != zone){Script+=" `zone`="+form.zones.value+",";}
+if (form.death_expire_time.value != death_expire_time){Script+=" `death_expire_time`="+form.death_expire_time.value+",";}
+if (form.taxi_path.value != taxi_path){Script+=" `taxi_path`="+form.taxi_path.value+",";}
+if (form.arenaPoints.value != arenaPoints){Script+=" `arenaPoints`="+form.arenaPoints.value+",";}
+if (form.totalHonorPoints.value != totalHonorPoints){Script+=" `totalHonorPoints`="+form.totalHonorPoints.value+",";}
+if (form.yesterdayHonorPoints.value != yesterdayHonorPoints){Script+=" `yesterdayHonorPoints`="+form.yesterdayHonorPoints.value+",";}
+if (form.totalKills.value != totalKills){Script+=" `totalKills`="+form.totalKills.value+",";}
+if (form.todayKills.value != todayKills){Script+=" `todayKills`="+form.todayKills.value+",";}
+if (form.yesterdayKills.value != yesterdayKills){Script+=" `yesterdayKills`="+form.yesterdayKills.value+",";}
+if (form.chosenTitle.value != chosenTitle){Script+=" `chosenTitle`="+form.chosenTitle.value+",";}
+if (form.knownCurrencies.value != knownCurrencies){Script+=" `knownCurrencies`="+form.knownCurrencies.value+",";}
+if (form.watchedFaction.value != watchedFaction){Script+=" `watchedFaction`="+form.watchedFaction.value+",";}
+if (form.drunk.value != drunk){Script+=" `drunk`="+form.drunk.value+",";}
+if (form.health.value != health){Script+=" `health`="+form.health.value+",";}
+if (form.power1.value != power1){Script+=" `power1`="+form.power1.value+",";}
+if (form.power2.value != power2){Script+=" `power2`="+form.power2.value+",";}
+if (form.power3.value != power3){Script+=" `power3`="+form.power3.value+",";}
+if (form.power4.value != power4){Script+=" `power4`="+form.power4.value+",";}
+if (form.power5.value != power5){Script+=" `power5`="+form.power5.value+",";}
+if (form.power6.value != power6){Script+=" `power6`="+form.power6.value+",";}
+if (form.power7.value != power7){Script+=" `power7`="+form.power7.value+",";}
+if (form.latency.value != latency){Script+=" `latency`="+form.latency.value+",";}
+if (form.speccount.value != speccount){Script+=" `speccount`="+form.speccount.value+",";}
+if (form.activespec.value != activespec){Script+=" `activespec`="+form.activespec.value+",";}
+if (form.exploredZones.value != exploredZones){Script+=" `exploredZones`="+form.exploredZones.value+",";}
+if (form.equipmentCache.value != equipmentCache){Script+=" `equipmentCache`="+form.equipmentCache.value+",";}
+if (form.ammoId.value != ammoId){Script+=" `ammoId`="+form.ammoId.value+",";}
+if (form.knownTitles.value != knownTitles){Script+=" `knownTitles`="+form.knownTitles.value+",";}
+if (form.actionBars.value != actionBars){Script+=" `actionBars`="+form.actionBars.value+",";}
+if (form.grantableLevels.value != grantableLevels){Script+=" `grantableLevels`="+form.grantableLevels.value+",";}
+if (form.deleteInfos_Account.value != deleteInfos_Account){Script+=" `deleteInfos_Account`="+form.deleteInfos_Account.value+",";}
+if (form.deleteInfos_Name.value != deleteInfos_Name){Script+=" `deleteInfos_Name`="+form.deleteInfos_Name.value+",";}
+if (form.deleteDate.value != deleteDate){Script+=" `deleteDate`="+form.deleteDate.value+",";}
+Where=" WHERE `guid`="+guid;
+Script=Script.substr(0, Script.length-1);
+Script+=Where;
+if (isNaN(form.guid.value) ==true){Script=""; Where="";}
+
+form.code.value=Script;
+
+location.href='Script.php?code='+Script+";";
 }
 </script>
-<p align="right"><input type="submit" value="Show Character Script"></p>
+<p align="right"><input type="submit" value="Show Character Script" OnClick='Scripts()'></p>
 <?php
 }
 ?>

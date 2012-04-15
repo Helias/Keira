@@ -169,7 +169,7 @@ if ($entry == "")
 <tr>
 <td><input type="text" value="<?php echo htmlspecialchars($row['questItem1']); ?>" style="width: 150px; height:23px;" name="questItem1"></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['questItem2']); ?>" style="width: 150px; height:23px;" name="questItem2"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['mechanic_immune_mask']); ?>" style="width: 150px; height:23px;" name="mechanic_immune_mask">
+<td><input type="text" value="<?php echo htmlspecialchars($row['mechanic_immune_mask']); ?>" style="width: 150px; height:23px;" name="mechanic_immune_masks">
 <select class="little" id="mechanic_immune_mask" OnChange="get_value_flag(this.id)">
 <option value="-1" selected="selected" disabled="disabled" class="bold">Mechanic</option>
 <option value="1">CHARM</option>
@@ -235,13 +235,13 @@ function get_value_flag(select)
 	selects=document.getElementById(select);
 	if (selects.options[selects.selectedIndex].className != "target")
 	{
-		document.getElementsByName(select)[0].value=parseInt(document.getElementsByName(select)[0].value)+parseInt(selects.options[selects.selectedIndex].value);
+		document.getElementsByName("mechanic_immune_masks")[0].value=parseInt(document.getElementsByName("mechanic_immune_masks")[0].value)+parseInt(selects.options[selects.selectedIndex].value);
 		selects.options[selects.selectedIndex].className="target";
 		selects.selectedIndex=0;
 	}
 	else if (selects.options[selects.selectedIndex].className=="target")
 	{
-		document.getElementsByName(select)[0].value=parseInt(document.getElementsByName(select)[0].value)-parseInt(selects.options[selects.selectedIndex].value);
+		document.getElementsByName("mechanic_immune_masks")[0].value=parseInt(document.getElementsByName("mechanic_immune_masks")[0].value)-parseInt(selects.options[selects.selectedIndex].value);
 		selects.options[selects.selectedIndex].className="";
 		selects.selectedIndex=0;
 	}
@@ -289,56 +289,53 @@ mechanic_immune_mask='<?php echo htmlspecialchars($row['mechanic_immune_mask']);
 PetSpellDataId='<?php echo htmlspecialchars($row['PetSpellDataId']); ?>';
 flags_extra='<?php echo htmlspecialchars($row['flags_extra']); ?>';
 
-Script="UPDATE creature_template SET";
-if(form.difficulty_entry_1.value != difficulty_entry_1){Script+=" difficulty_entry_1="+form.difficulty_entry_1.value+",";}
-if (form.difficulty_entry_2.value != difficulty_entry_2){Script+=" difficulty_entry_2="+form.difficulty_entry_2.value+",";}
-if (form.difficulty_entry_3.value != difficulty_entry_3){Script+=" difficulty_entry_3="+form.difficulty_entry_3.value+",";}
-if (form.Killcredit1.value != Killcredit1){Script+=" Killcredit1="+form.Killcredit1.value+",";}
-if (form.Killcredit2.value != Killcredit2){Script+=" Killcredit2="+form.Killcredit2.value+",";}
-if (form.name.value != name){Script+=" name='"+form.name.value+"',";}
-if (form.subname.value != subname){Script+=" subname='"+form.subname.value+"',";}
-if (form.iconname.value != iconname){Script+=" iconname='"+form.iconname.value+"',";}
-if (form.modelid1.value != modelid1){Script+=" modelid1="+form.modelid1.value+",";}
-if (form.modelid2.value != modelid2){Script+=" modelid2="+form.modelid2.value+",";}
-if (form.modelid3.value != modelid3){Script+=" modelid3="+form.modelid3.value+",";}
-if (form.modelid4.value != modelid4){Script+=" modelid4="+form.modelid4.value+",";}
-if (form.mingold.value != mingold){Script+=" mingold="+form.mingold.value+",";}
-if (form.maxgold.value != maxgold){Script+=" maxgold="+form.maxgold.value+",";}
-if (form.minlevel.value != minlevel){Script+=" minlevel="+form.minlevel.value+",";}
-if (form.maxlevel.value != maxlevel){Script+=" maxlevel="+form.maxlevel.value+",";}
-if (form.Health_mod.value != Health_mod){Script+=" Health_mod="+form.Health_mod.value+",";}
-if (form.Mana_mod.value != Mana_mod){Script+=" Mana_mod="+form.Mana_mod.value+",";}
-if (form.VehicleId.value != VehicleId){Script+=" VehicleId="+form.VehicleId.value+",";}
-if (form.exp.value != exp){Script+=" exp="+form.exp.value+",";}
-if (form.lootid.value != lootid){Script+=" lootid="+form.lootid.value+",";}
-if (form.pickpocketloot.value != pickpocketloot){Script+=" pickpocketloot="+form.pickpocketloot.value+",";}
-if (form.skinloot.value != skinloot){Script+=" skinloot="+form.skinloot.value+",";}
-if (form.resistance1.value != resistance1){Script+=" resistance1="+form.resistance1.value+",";}
-if (form.resistance2.value != resistance2){Script+=" resistance2="+form.resistance2.value+",";}
-if (form.resistance3.value != resistance3){Script+=" resistance3="+form.resistance3.value+",";}
-if (form.resistance4.value != resistance4){Script+=" resistance4="+form.resistance4.value+",";}
-if (form.resistance5.value != resistance5){Script+=" resistance5="+form.resistance5.value+",";}
-if (form.resistance6.value != resistance6){Script+=" resistance6="+form.resistance6.value+",";}
-if (form.questItem1.value != questItem1){Script+=" questItem1="+form.questItem1.value+",";}
-if (form.questItem2.value != questItem2){Script+=" questItem2="+form.questItem2.value+",";}
-if (form.questItem3.value != questItem3){Script+=" questItem3="+form.questItem3.value+",";}
-if (form.questItem4.value != questItem4){Script+=" questItem4="+form.questItem4.value+",";}
-if (form.questItem5.value != questItem5){Script+=" questItem5="+form.questItem5.value+",";}
-if (form.questItem6.value != questItem6){Script+=" questItem6="+form.questItem6.value+",";}
-if (form.mechanic_immune_mask .value != mechanic_immune_mask ){Script+=" mechanic_immune_mask ="+form.mechanic_immune_mask .value+",";}
-if (form.PetSpellDataId.value != PetSpellDataId){Script+=" PetSpellDataId="+form.PetSpellDataId.value+",";}
-if (form.flags_extra.value != flags_extra){Script+=" flags_extra="+form.flags_extra.value+",";}
-//entry
-if (form.entry.value==entry){Where=" WHERE entry="+entry;}
-else{Where=" WHERE entry="+form.entry.value;}
-
+Script="UPDATE `creature_template` SET";
+if(form.difficulty_entry_1.value != difficulty_entry_1){Script+=" `difficulty_entry_1`="+form.difficulty_entry_1.value+",";}
+if (form.difficulty_entry_2.value != difficulty_entry_2){Script+=" `difficulty_entry_2`="+form.difficulty_entry_2.value+",";}
+if (form.difficulty_entry_3.value != difficulty_entry_3){Script+=" `difficulty_entry_3`="+form.difficulty_entry_3.value+",";}
+if (form.Killcredit1.value != Killcredit1){Script+=" `Killcredit1`="+form.Killcredit1.value+",";}
+if (form.Killcredit2.value != Killcredit2){Script+=" `Killcredit2`="+form.Killcredit2.value+",";}
+if (form.name.value != name){Script+=" `name`='"+form.name.value+"',";}
+if (form.subname.value != subname){Script+=" `subname`='"+form.subname.value+"',";}
+if (form.iconname.value != iconname){Script+=" `iconname`='"+form.iconname.value+"',";}
+if (form.modelid1.value != modelid1){Script+=" `modelid1`="+form.modelid1.value+",";}
+if (form.modelid2.value != modelid2){Script+=" `modelid2`="+form.modelid2.value+",";}
+if (form.modelid3.value != modelid3){Script+=" `modelid3`="+form.modelid3.value+",";}
+if (form.modelid4.value != modelid4){Script+=" `modelid4`="+form.modelid4.value+",";}
+if (form.mingold.value != mingold){Script+=" `mingold`="+form.mingold.value+",";}
+if (form.maxgold.value != maxgold){Script+=" `maxgold`="+form.maxgold.value+",";}
+if (form.minlevel.value != minlevel){Script+=" `minlevel`="+form.minlevel.value+",";}
+if (form.maxlevel.value != maxlevel){Script+=" `maxlevel`="+form.maxlevel.value+",";}
+if (form.Health_mod.value != Health_mod){Script+=" `Health_mod`="+form.Health_mod.value+",";}
+if (form.Mana_mod.value != Mana_mod){Script+=" `Mana_mod`="+form.Mana_mod.value+",";}
+if (form.VehicleId.value != VehicleId){Script+=" `VehicleId`="+form.VehicleId.value+",";}
+if (form.exp.value != exp){Script+=" `exp`="+form.exp.value+",";}
+if (form.lootid.value != lootid){Script+=" `lootid`="+form.lootid.value+",";}
+if (form.pickpocketloot.value != pickpocketloot){Script+=" `pickpocketloot`="+form.pickpocketloot.value+",";}
+if (form.skinloot.value != skinloot){Script+=" `skinloot`="+form.skinloot.value+",";}
+if (form.resistance1.value != resistance1){Script+=" `resistance1`="+form.resistance1.value+",";}
+if (form.resistance2.value != resistance2){Script+=" `resistance2`="+form.resistance2.value+",";}
+if (form.resistance3.value != resistance3){Script+=" `resistance3`="+form.resistance3.value+",";}
+if (form.resistance4.value != resistance4){Script+=" `resistance4`="+form.resistance4.value+",";}
+if (form.resistance5.value != resistance5){Script+=" `resistance5`="+form.resistance5.value+",";}
+if (form.resistance6.value != resistance6){Script+=" `resistance6`="+form.resistance6.value+",";}
+if (form.questItem1.value != questItem1){Script+=" `questItem1`="+form.questItem1.value+",";}
+if (form.questItem2.value != questItem2){Script+=" `questItem2`="+form.questItem2.value+",";}
+if (form.questItem3.value != questItem3){Script+=" `questItem3`="+form.questItem3.value+",";}
+if (form.questItem4.value != questItem4){Script+=" `questItem4`="+form.questItem4.value+",";}
+if (form.questItem5.value != questItem5){Script+=" `questItem5`="+form.questItem5.value+",";}
+if (form.questItem6.value != questItem6){Script+=" `questItem6`="+form.questItem6.value+",";}
+if (form.mechanic_immune_masks .value != mechanic_immune_mask ){Script+=" `mechanic_immune_mask`="+form.mechanic_immune_masks .value+",";}
+if (form.PetSpellDataId.value != PetSpellDataId){Script+=" `PetSpellDataId`="+form.PetSpellDataId.value+",";}
+if (form.flags_extra.value != flags_extra){Script+=" `flags_extra`="+form.flags_extra.value+",";}
+Where=" WHERE `entry`="+entry;
 Script=Script.substr(0, Script.length-1);
 Script+=Where;
 if (isNaN(form.entry.value) ==true){Script=""; Where="";}
 
 form.code.value=Script;
 
-location.href='creature_script.php?code='+Script;
+location.href='Script.php?code='+Script+";";
 }
 </script>
 <p align="right"><input type="submit" value="Show Creature Template Script" OnClick='Scripts()'></p>

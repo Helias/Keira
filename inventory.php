@@ -82,6 +82,7 @@ else
 <script type="text/Javascript">
 var n=0;
 var count=document.getElementById("inventory").rows.length;
+var deletes="DELETE FROM `character_inventory` WHERE guid= AND item IN ()";
 function remove_target()
 {
 	for(var i=1; i<document.getElementById("inventory").rows.length; i++)

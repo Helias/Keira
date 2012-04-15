@@ -1,7 +1,6 @@
 <?php
 include "db-config.php";
 include "menu.php";
-include "creature_menu.php";
 $code=$_GET['code'];
 ?>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET" name="form" OnSubmit="return execute(this);">

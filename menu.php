@@ -14,6 +14,7 @@ if (!(include "db-config.php"))
 		<td><input type="submit" value="Item" OnClick="location.href='Item.php'"></td>
 		<td><input type="submit" value="Other" OnClick="location.href='Other.php'"></td>
 		<td><input type="submit" value="Character" OnClick="location.href='Character.php'"></td>
+		<td><input type="submit" value="Script" OnClick="location.href='Script.php'"></td>
 		<td><input type="submit" value="SQL" OnClick="location.href='SQL.php'"></td>
 		<td style="width: 50px;"></td>
 		<td><input type="submit" value="Reconnect" OnClick="location.href='Connect.php'"></td>
@@ -21,6 +22,6 @@ if (!(include "db-config.php"))
 </table>
 <table>
 	<tr>
-		<td><p><input type="submit" value="" style="width: 530px; height:0.5px;"></p></td>
+		<td><p><input type="submit" value="" style="width: 600px; height:0.5px;"></p></td>
 	</tr>
 </table>
