@@ -70,7 +70,7 @@ else
 </tr>
 <tr>
 <br>
-<td><input type="text" id="guid" name="guid"></td>
+<td><input type="text" id="guid" name="guid" value="<?php echo $guid; ?>" disabled="disabled" style="background-color:white;"></td>
 <td><input type="text" id="bag" name="bag"></td>
 <td><input type="text" id="slot" name="slot"></td>
 <td><input type="text" id="item" name="item"></td>
@@ -80,9 +80,9 @@ else
 </tr>
 </table>
 <script type="text/Javascript">
-var n=0;
-var count=document.getElementById("inventory").rows.length;
-var deletes="DELETE FROM `character_inventory` WHERE guid= AND item IN ()";
+var truncate="DELETE FROM `character_inventory` WHERE item IN (";
+var insert="";
+var items="";
 function remove_target()
 {
 	for(var i=1; i<document.getElementById("inventory").rows.length; i++)
@@ -106,33 +106,56 @@ function get_values(guid, bag, slot, item)
 
 function add()
 {
-	var guid=document.getElementById("guid").value;
 	var bag=document.getElementById("bag").value;
 	var slot=document.getElementById("slot").value;
 	var item=document.getElementById("item").value;
-	if ((guid != "") && (bag != "") && (slot != "") && (item != ""))
+	var guid=document.getElementById("guid").value;
+	if ((bag != "") && (slot != "") && (item != ""))
 	{
 		var table=document.getElementById("inventory");
-		var tr=table.insertRow(table.rows.length);
-		var td0=tr.insertCell(0);
-		var td1=tr.insertCell(1);
-		var td2=tr.insertCell(2);
-		var td3=tr.insertCell(3);
-		tr.id=table.rows.length-1;
-		td0.onclick=function() { remove_target(); tr.className='target'; get_values(guid, bag, slot, item); }
-		td1.onclick=function() { remove_target(); tr.className='target'; get_values(guid, bag, slot, item); }
-		td2.onclick=function() { remove_target(); tr.className='target'; get_values(guid, bag, slot, item); }
-		td3.onclick=function() { remove_target(); tr.className='target'; get_values(guid, bag, slot, item); }
-		td0.innerHTML=guid;
-		td1.innerHTML=bag;
-		td2.innerHTML=slot;
-		td3.innerHTML=item;
-		count++;
+		var check_slot=true;
+		for(var i=0; i<table.rows.length; i++)
+		{
+			if(table.rows[i].className != "del")
+			{
+				if(slot==table.rows[i].cells[2].innerHTML)
+				{
+					check_slot=false;
+					alert("This slot is already full!");
+					break;
+				}
+				
+				if(item==table.rows[i].cells[3].innerHTML)
+				{
+					check_slot=false;
+					alert("This item is already exist!");
+					break;					
+				}
+			}
+		}
+		if(check_slot==true)
+		{
+			var tr=table.insertRow(table.rows.length);
+			var td0=tr.insertCell(0);
+			var td1=tr.insertCell(1);
+			var td2=tr.insertCell(2);
+			var td3=tr.insertCell(3);
+			tr.id=table.rows.length-1;
+			td0.onclick=function() { remove_target(); tr.className='target'; get_values(guid, bag, slot, item); }
+			td1.onclick=function() { remove_target(); tr.className='target'; get_values(guid, bag, slot, item); }
+			td2.onclick=function() { remove_target(); tr.className='target'; get_values(guid, bag, slot, item); }
+			td3.onclick=function() { remove_target(); tr.className='target'; get_values(guid, bag, slot, item); }
+			td0.innerHTML=guid;
+			td1.innerHTML=bag;
+			td2.innerHTML=slot;
+			td3.innerHTML=item;
+			items+=","+document.getElementById("item").value;
+			insert+="<br>("+tr.cells[0].innerHTML+","+tr.cells[1].innerHTML+","+tr.cells[2].innerHTML+","+tr.cells[3].innerHTML+"),";
+		}
 	}
 	else
 	{
 		var message="Fill the box of:";
-		if (guid == "") { message+=" guid"; }
 		if (bag == "") { message+=" bag"; }
 		if (slot == "") { message+=" slot"; }
 		if (item == "") { message+=" item"; }
@@ -143,17 +166,89 @@ function add()
 function exchange()
 {
 	var tr=document.getElementsByClassName("target")[0];
-	tr.cells[0].innerHTML=document.getElementById("guid").value;
-	tr.cells[1].innerHTML=document.getElementById("bag").value;
-	tr.cells[2].innerHTML=document.getElementById("slot").value;
-	tr.cells[3].innerHTML=document.getElementById("item").value;
-	tr.cells[4].innerHTML="";
+	var table=document.getElementById("inventory");
+	var bag=document.getElementById("bag").value;
+	var slot=document.getElementById("slot").value;
+	var item=document.getElementById("item").value;
+	var guid=document.getElementById("guid").value;
+	var check_slot=true;
+	if ((bag != "") && (slot != "") && (item != ""))
+	{
+		if(slot==tr.cells[2].innerHTML && item==tr.cells[3].innerHTML)
+		{
+			check_slot=true;
+		}
+		else
+		{
+			for(var i=0; i<table.rows.length; i++)
+			{
+				if(table.rows[i].className != "del")
+				{
+					if(slot==table.rows[i].cells[2].innerHTML)
+					{
+						if(slot != tr.cells[2].innerHTML)
+						{
+							check_slot=false;
+							alert("This slot is already full!");
+							break;
+						}
+					}
+					
+					if(item==table.rows[i].cells[3].innerHTML)
+					{
+						if(item != tr.cells[3].innerHTML)
+						{
+							check_slot=false;
+							alert("This item is already exist!");
+							break;
+						}
+					}
+				}
+			}
+		}
+		
+		if(check_slot==true)
+		{
+			items+=","+document.getElementsByClassName("target")[0].cells[3].innerHTML;
+			tr.cells[0].innerHTML=document.getElementById("guid").value;
+			tr.cells[1].innerHTML=document.getElementById("bag").value;
+			tr.cells[2].innerHTML=document.getElementById("slot").value;
+			tr.cells[3].innerHTML=document.getElementById("item").value;
+			tr.cells[4].innerHTML="";
+			insert+="<br>("+tr.cells[0].innerHTML+","+tr.cells[1].innerHTML+","+tr.cells[2].innerHTML+","+tr.cells[3].innerHTML+"),";
+		}
+	}
+	else
+	{
+		var message="Fill the box of:";
+		if (bag == "") { message+=" bag"; }
+		if (slot == "") { message+=" slot"; }
+		if (item == "") { message+=" item"; }
+		alert(message);
+	}
 }
 
 function del()
 {
+	items+=","+document.getElementsByClassName("target")[0].cells[3].innerHTML;
 	document.getElementsByClassName("target")[0].className="del";
+}
+
+function Scripts()
+{
+	truncate=(truncate+items).replace(",","");
+	if(insert != "")
+	{
+		var Script=truncate+"); <br>INSERT INTO `character_inventory` (`guid`,`bag`,`slot`,`item`) VALUES"+insert;
+		Script=Script.substr(0, Script.length-1);
+		Script+=";";
+	}
+	else
+	{
+		var Script=truncate+");";
+	}
+	location.href="Script.php?code="+Script;
 }
 </script>
 </form>
-<p align="right"><input type="submit" value="Show Character Inventory Script"></p>
+<p align="right"><input type="submit" value="Show Character Inventory Script" OnClick="Scripts()"></p>

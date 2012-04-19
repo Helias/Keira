@@ -10,7 +10,6 @@
 		<td><input type="submit" value="Enchantment" OnClick="location.href='enchantment.php'"></td>
 		<td><input type="submit" value="Looted From" OnClick="location.href='looted_from.php'"></td>
 		<td><input type="submit" value="Involved in" OnClick="location.href='item_involved_in.php'"></td>
-		<td><input type="submit" value="Script" OnClick="location.href='item_script.php'"></td>
 	</tr>
 </table>
-<table><tr><td><p><input type="submit" value="" style="width: 1210px; height:0.5px;"></p></td></tr></table>
+<table><tr><td><p><input type="submit" value="" style="width: 1140px; height:0.5px;"></p></td></tr></table>

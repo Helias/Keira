@@ -22,7 +22,7 @@ function execute(form)
 }
 </script>
 <input type="hidden" name="x">
-<p><textarea name="code" cols="100" rows="30"><?php echo $_GET['code']; ?></textarea></p>
+<p><textarea name="code" cols="100" rows="30"><?php echo str_replace("<br>", "\n", $_GET['code']); ?></textarea></p>
 <p><textarea name="error" cols="100" rows="5">
 <?php
 $x=$_GET['x'];
@@ -42,4 +42,3 @@ if($x=="1")
 </textarea></p>
 <p><input type="submit" value="Execute"></p>
 </form>
-
