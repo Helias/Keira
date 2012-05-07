@@ -2,7 +2,7 @@
 include "db-config.php";
 include "menu.php";
 include "creature_menu.php";
-include "creature_loots.php";
+include "loot_function.php";
 ?>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
 <table border="1" id="loot">
@@ -60,4 +60,4 @@ get_loot('skinning_loot_template', 'skinloot');
 </table>
 <script type="text/Javascript" src="creature_loot.js"></script>
 </form>
-<p align="right"><input type="submit" value="Show Creature Loot Script" OnClick="Scripts('skinning_loot_template')"></p>
+<p align="right"><input type="submit" value="Show Skin Loot Script" OnClick="Scripts('skinning_loot_template')"></p>

@@ -1,7 +1,7 @@
 <?php
 include "db-config.php";
 include "menu.php";
-include "creature_menu.php";
+include "item_menu.php";
 include "loot_function.php";
 ?>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
@@ -17,10 +17,9 @@ include "loot_function.php";
 <td>Name</td>
 </tr>
 <?php
-get_loot('creature_loot_template', 'lootid');
+get_loot('prospecting_loot_template', 'other');
 ?>
 </table>
-<input type="hidden" name="entry" value="<?php echo $entry; ?>">
 <table>
 <tr>
 <td>entry</td>
@@ -28,7 +27,7 @@ get_loot('creature_loot_template', 'lootid');
 </tr>
 <tr>
 <br>
-<td><input type="text" class="medium" id="loot_id" name="loot_id" value="<?php echo $loot_id; ?>"></td>
+<td><input type="text" class="medium" id="loot_id" name="loot_id" value="<?php echo $_GET['loot_id']; ?>"><input type="button" class="little" OnClick="location.href='prospecting_loot.php?entry='+document.getElementById('loot_id').value;"></td>
 <td><input type="text" class="medium" id="item" name="item"></td>
 <td></td><td></td><td></td>
 <td><input type="button" value="+" OnClick="add()"></td>
@@ -60,4 +59,4 @@ get_loot('creature_loot_template', 'lootid');
 </table>
 <script type="text/Javascript" src="creature_loot.js"></script>
 </form>
-<p align="right"><input type="submit" value="Show Creature Loot Script" OnClick="Scripts('creature_loot_template')"></p>
+<p align="right"><input type="submit" value="Show Prospecting Loot Script" OnClick="Scripts('prospecting_loot_template')"></p>

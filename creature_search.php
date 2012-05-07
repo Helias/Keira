@@ -43,7 +43,8 @@ include "creature_menu.php";
 
 		if ($Name)
 		{
-			$where.=" AND name LIKE \"%".$Name."%\"";
+			$Name=str_replace("'", "\'", $Name);
+			$where.=" AND name LIKE '%$Name%'";
 		}
 
 		if ($Subname)

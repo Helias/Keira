@@ -4,11 +4,24 @@ function get_loot($table, $loot)
 	$entry=$_GET['entry'];
 	if ($entry != "")
 	{
-		$query_loot=mysql_query("SELECT $loot FROM creature_template WHERE entry=$entry");
-		while($row_loot=mysql_fetch_array($query_loot))
+		if($loot != "other" AND $loot != "data1")
 		{
-			$loot_id=$row_loot['$loot'];
+			$query_loot=mysql_query("SELECT $loot FROM creature_template WHERE entry=$entry");
+			while($row_loot=mysql_fetch_array($query_loot))
+			{
+				$loot_id=$row_loot['$loot'];
+			}
 		}
+		
+		if($loot == "data1")
+		{
+			$query_loot=mysql_query("SELECT $loot FROM gameobject_template WHERE entry=$entry");
+			while($row_loot=mysql_fetch_array($query_loot))
+			{
+				$loot_id=$row_loot['$loot'];
+			}			
+		}
+		
 		if($loot_id==0)
 		{
 			$loot_id=$entry;

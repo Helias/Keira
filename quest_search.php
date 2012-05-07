@@ -37,6 +37,7 @@ include "quest_menu.php";
 
 		if ($Title)
 		{
+			$Title=str_replace("'", "\'", $Title);
 			$where.=" AND Title LIKE '%$Title%'";
 		}
 
