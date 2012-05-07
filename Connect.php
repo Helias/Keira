@@ -1,9 +1,4 @@
 <link rel="stylesheet" href="./style.css">
-<style type="text/css">
-table#configuration {
-	margin-top:10%;
-}
-</style>
 <form action="Connect.php" method="post" name="connect" OnSubmit="return config(this)">
 <center>
 <title>Configuration</title>

@@ -3,7 +3,7 @@ include "db-config";
 include "menu.php"; 
 include "creature_menu.php";
 $entry=$_GET['entry'];
-if ($entry== "")
+if ($entry == "")
 {
 	$query=mysql_query("SELECT * FROM creature_template WHERE entry=1");
 }
@@ -19,20 +19,6 @@ if ($entry == "")
 	$row="";
 }
 ?>
-<style type="text/css">
-.bold {
-	font-weight:bold; 
-	color:black;
-}
-
-.little {
-	width:20px;
-}
-
-.target {
-	background-color:deepskyblue;
-}
-</style>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get" name="form" id="form">
 <table>
 <tr>
@@ -46,7 +32,7 @@ if ($entry == "")
 <td>Entry</td><td>difficulty_entry_1</td><td>difficulty_entry_2</td><td>difficulty_entry_3</td>
 </tr>
 <tr>
-<td><input type="text" title="creature's id, related to field creature.id" value="<?php echo $entry; ?>" style="width: 125px; height:23px;" name="entry" ><input type="submit" value="" OnClick="location.href='creature_template.php?<?php echo $entry ?>'"></td>
+<td><input type="text" title="creature's id, related to field creature.id" value="<?php echo $entry; ?>" style="width: 125px; height:23px;" name="entry"><input type="submit" value="" OnClick="location.href='creature_template.php?<?php echo $entry ?>'"></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['difficulty_entry_1']); ?>" style="width: 125px; height:23px;" name="difficulty_entry_1"><a href="creature_template.php?entry=<?php echo htmlspecialchars($row['difficulty_entry_1']); ?>"><input type="submit" value="" style="width: 15px; height; 23;"></a></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['difficulty_entry_2']); ?>" style="width: 125px; height:23px;" name="difficulty_entry_2"><a href="creature_template.php?entry=<?php echo htmlspecialchars($row['difficulty_entry_2']); ?>"><input type="submit" value="" style="width: 15px; height; 23;"></a></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['difficulty_entry_3']); ?>" style="width: 125px; height:23px;" name="difficulty_entry_3"><a href="creature_template.php?entry=<?php echo htmlspecialchars($row['difficulty_entry_3']); ?>"><input type="submit" value="" style="width: 15px; height; 23;"></a></td>
@@ -170,7 +156,7 @@ if ($entry == "")
 <td><input type="text" value="<?php echo htmlspecialchars($row['questItem1']); ?>" style="width: 150px; height:23px;" name="questItem1"></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['questItem2']); ?>" style="width: 150px; height:23px;" name="questItem2"></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['mechanic_immune_mask']); ?>" style="width: 150px; height:23px;" name="mechanic_immune_masks">
-<select class="little" id="mechanic_immune_mask" OnChange="get_value_flag(this.id)">
+<select class="little" id="mechanic_immune_mask" OnChange="get_value_flag(this.id, 'mechanic_immune_masks')">
 <option value="-1" selected="selected" disabled="disabled" class="bold">Mechanic</option>
 <option value="1">CHARM</option>
 <option value="2">DISORIENTED</option>
@@ -230,18 +216,33 @@ if ($entry == "")
 <input type="hidden" name="code">
 </form>
 <script type="text/javascript">
-function get_value_flag(select)
+function get_value_flag(select, name)
 {
+	var Element=document.getElementsByName(name)[0];
 	selects=document.getElementById(select);
 	if (selects.options[selects.selectedIndex].className != "target")
 	{
-		document.getElementsByName("mechanic_immune_masks")[0].value=parseInt(document.getElementsByName("mechanic_immune_masks")[0].value)+parseInt(selects.options[selects.selectedIndex].value);
 		selects.options[selects.selectedIndex].className="target";
+		for (var i=1; i<selects.options.length; i++)
+		{
+			if(selects.options[i].className != "target")
+			{
+				Element.value=parseInt(Element.value)+parseInt(selects.options[selects.selectedIndex].value);
+				break;
+			}
+			else
+			{
+				if(i==selects.options.length-1)
+				{
+					Element.value="-1";
+				}
+			}
+		}
 		selects.selectedIndex=0;
 	}
 	else if (selects.options[selects.selectedIndex].className=="target")
 	{
-		document.getElementsByName("mechanic_immune_masks")[0].value=parseInt(document.getElementsByName("mechanic_immune_masks")[0].value)-parseInt(selects.options[selects.selectedIndex].value);
+		Element.value=parseInt(Element.value)-parseInt(selects.options[selects.selectedIndex].value);
 		selects.options[selects.selectedIndex].className="";
 		selects.selectedIndex=0;
 	}

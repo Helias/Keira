@@ -9,14 +9,6 @@ if (!$Databases)
 	header("location:Connect.php");
 }
 ?>
-<style type="text/css">
-.target {
-	background-color:deepskyblue;
-}
-.del {
-	display:none;
-}
-</style>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
 <table border="1" id="inventory">
 <tr>
@@ -209,7 +201,7 @@ function exchange()
 		
 		if(check_slot==true)
 		{
-			items+=","+document.getElementsByClassName("target")[0].cells[3].innerHTML;
+			items+=","+tr.cells[3].innerHTML;
 			tr.cells[0].innerHTML=document.getElementById("guid").value;
 			tr.cells[1].innerHTML=document.getElementById("bag").value;
 			tr.cells[2].innerHTML=document.getElementById("slot").value;
@@ -230,22 +222,24 @@ function exchange()
 
 function del()
 {
-	items+=","+document.getElementsByClassName("target")[0].cells[3].innerHTML;
-	document.getElementsByClassName("target")[0].className="del";
+	var tr=document.getElementsByClassName("target")[0];
+	items+=","+tr.cells[3].innerHTML;
+	tr.className="del";
 }
 
 function Scripts()
 {
+	var Script="";
 	truncate=(truncate+items).replace(",","");
 	if(insert != "")
 	{
-		var Script=truncate+"); <br>INSERT INTO `character_inventory` (`guid`,`bag`,`slot`,`item`) VALUES"+insert;
+		Script=truncate+"); <br>INSERT INTO `character_inventory` (`guid`,`bag`,`slot`,`item`) VALUES"+insert;
 		Script=Script.substr(0, Script.length-1);
 		Script+=";";
 	}
 	else
 	{
-		var Script=truncate+");";
+		Script=truncate+");";
 	}
 	location.href="Script.php?code="+Script;
 }

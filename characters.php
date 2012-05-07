@@ -26,25 +26,8 @@ if ($guid == "")
 }
 ?>
 <style type="text/css">
-.input_box {
-	width:90px;
-}
-
 td {
 	font-size:90%;
-}
-
-.long_width {
-	width:1000px;
-}
-
-.little {
-	width:20px;
-}
-
-.bold {
-	font-weight:bold;
-	color:black;
 }
 </style>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get" name="form">

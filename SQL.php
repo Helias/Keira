@@ -2,12 +2,6 @@
 include "db-config";
 include "menu.php";
 ?>
-<style type="text/css">
-.bold {
-	font-weight:bold; 
-	color:black;
-}
-</style>
 <script type="text/javascript">
 function mysql_send(form_ins)
 {
@@ -39,7 +33,7 @@ $id=0;
 $id_2=1;
 for($count=0; $count<2; $count++)
 {
-	if($Database !== $Characters)
+	if($Database != $Characters)
 	{
 		if ($count==0)
 		{
@@ -86,7 +80,7 @@ for($count=0; $count<2; $count++)
 $id=0;
 for($count=0; $count<2; $count++)
 {
-	if($Database !== $Characters)
+	if($Database != $Characters)
 	{
 		if ($count==0)
 		{
@@ -125,7 +119,7 @@ $id=0;
 $id_2=0;
 for($count=0; $count<2; $count++)
 {
-	if($Database !== $Characters)
+	if($Database != $Characters)
 	{
 		if ($count==0)
 		{
