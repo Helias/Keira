@@ -42,6 +42,7 @@ $x=$_POST['x'];
 		
 		if ($name)
 		{
+			$name=str_replace("'", "\'", $name);
 			$where.=" AND name LIKE '%$name%'";
 		}
 		

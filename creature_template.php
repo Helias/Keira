@@ -32,7 +32,7 @@ if ($entry == "")
 <td>Entry</td><td>difficulty_entry_1</td><td>difficulty_entry_2</td><td>difficulty_entry_3</td>
 </tr>
 <tr>
-<td><input type="text" title="creature's id, related to field creature.id" value="<?php echo $entry; ?>" style="width: 125px; height:23px;" name="entry"><input type="submit" value="" OnClick="location.href='creature_template.php?<?php echo $entry ?>'"></td>
+<td><input type="text" title="creature's id, related to field creature.id" value="<?php echo $entry; ?>" style="width: 125px; height:23px;" name="entry"><input type="submit" value="" OnClick="location.href='creature_template.php?entry=<?php echo $entry ?>'"></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['difficulty_entry_1']); ?>" style="width: 125px; height:23px;" name="difficulty_entry_1"><a href="creature_template.php?entry=<?php echo htmlspecialchars($row['difficulty_entry_1']); ?>"><input type="submit" value="" style="width: 15px; height; 23;"></a></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['difficulty_entry_2']); ?>" style="width: 125px; height:23px;" name="difficulty_entry_2"><a href="creature_template.php?entry=<?php echo htmlspecialchars($row['difficulty_entry_2']); ?>"><input type="submit" value="" style="width: 15px; height; 23;"></a></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['difficulty_entry_3']); ?>" style="width: 125px; height:23px;" name="difficulty_entry_3"><a href="creature_template.php?entry=<?php echo htmlspecialchars($row['difficulty_entry_3']); ?>"><input type="submit" value="" style="width: 15px; height; 23;"></a></td>

@@ -12,4 +12,4 @@
 		<td><input type="submit" value="Involved in" OnClick="location.href='item_involved_in.php'"></td>
 	</tr>
 </table>
-<table><tr><td><p><input type="submit" value="" style="width: 1140px; height:0.5px;"></p></td></tr></table>
+<table><tr><td><p><input type="submit" value="" style="width: 1080px; height:0.5px;"></p></td></tr></table>

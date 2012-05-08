@@ -15,10 +15,10 @@ function get_loot($table, $loot)
 		
 		if($loot == "data1")
 		{
-			$query_loot=mysql_query("SELECT $loot FROM gameobject_template WHERE entry=$entry");
+			$query_loot=mysql_query("SELECT data1 FROM gameobject_template WHERE entry=$entry");
 			while($row_loot=mysql_fetch_array($query_loot))
 			{
-				$loot_id=$row_loot['$loot'];
+				$loot_id=$row_loot['data1'];
 			}			
 		}
 		
