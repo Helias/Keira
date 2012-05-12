@@ -14,8 +14,10 @@ include "quest_menu.php";
 	<tr>
 		<td><input type="text" name="Id"></td>
 		<td><input type="text" name="Title" style="width: 300px;"></td>
+		<td><input type="submit" value="Search"></td>
 	</tr>
 </table>
+<div class="scroll">
 <table border="1">
 	<tr>
 		<td>Id</td>
@@ -54,5 +56,5 @@ include "quest_menu.php";
 		</td>
 	</tr>
 </table>
-<p align="left"><input type="submit" value="Search"></p>
+</div>
 </form>

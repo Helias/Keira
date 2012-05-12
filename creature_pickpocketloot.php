@@ -58,6 +58,6 @@ get_loot('pickpocketing_loot_template', 'pickpocketloot');
 </td>
 </tr>
 </table>
-<script type="text/Javascript" src="creature_loot.js"></script>
+<script type="text/Javascript" src="loot_function.js"></script>
 </form>
 <p align="right"><input type="submit" value="Show Pickpocket Loot Script" OnClick="Scripts('pickpocketing_loot_template')"></p>

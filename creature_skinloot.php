@@ -58,6 +58,6 @@ get_loot('skinning_loot_template', 'skinloot');
 </td>
 </tr>
 </table>
-<script type="text/Javascript" src="creature_loot.js"></script>
+<script type="text/Javascript" src="loot_function.js"></script>
 </form>
 <p align="right"><input type="submit" value="Show Skin Loot Script" OnClick="Scripts('skinning_loot_template')"></p>

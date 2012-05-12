@@ -46,15 +46,15 @@ function get_loot($table, $loot)
 				}
 			}
 ?>
-<tr id="<?php echo $count; ?>">
-<td OnClick="remove_target(); document.getElementById('<?php echo $count; ?>').className='target'; get_values(<?php echo $loot_id.",".htmlspecialchars($row['item']).",".htmlspecialchars($row['ChanceOrQuestChance']).",".htmlspecialchars($row['groupid']).",".htmlspecialchars($row['mincountOrRef']).",".htmlspecialchars($row['maxcount']).",".htmlspecialchars($row['lootmode']); ?>);"><?php echo $loot_id; ?></td>
-<td OnClick="remove_target(); document.getElementById('<?php echo $count; ?>').className='target'; get_values(<?php echo $loot_id.",".htmlspecialchars($row['item']).",".htmlspecialchars($row['ChanceOrQuestChance']).",".htmlspecialchars($row['groupid']).",".htmlspecialchars($row['mincountOrRef']).",".htmlspecialchars($row['maxcount']).",".htmlspecialchars($row['lootmode']); ?>);"><?php echo htmlspecialchars($row['item']); ?></td>
-<td OnClick="remove_target(); document.getElementById('<?php echo $count; ?>').className='target'; get_values(<?php echo $loot_id.",".htmlspecialchars($row['item']).",".htmlspecialchars($row['ChanceOrQuestChance']).",".htmlspecialchars($row['groupid']).",".htmlspecialchars($row['mincountOrRef']).",".htmlspecialchars($row['maxcount']).",".htmlspecialchars($row['lootmode']); ?>);"><?php echo htmlspecialchars($row['ChanceOrQuestChance']); ?></td>
-<td OnClick="remove_target(); document.getElementById('<?php echo $count; ?>').className='target'; get_values(<?php echo $loot_id.",".htmlspecialchars($row['item']).",".htmlspecialchars($row['ChanceOrQuestChance']).",".htmlspecialchars($row['groupid']).",".htmlspecialchars($row['mincountOrRef']).",".htmlspecialchars($row['maxcount']).",".htmlspecialchars($row['lootmode']); ?>);"><?php echo htmlspecialchars($row['lootmode']); ?></td>
-<td OnClick="remove_target(); document.getElementById('<?php echo $count; ?>').className='target'; get_values(<?php echo $loot_id.",".htmlspecialchars($row['item']).",".htmlspecialchars($row['ChanceOrQuestChance']).",".htmlspecialchars($row['groupid']).",".htmlspecialchars($row['mincountOrRef']).",".htmlspecialchars($row['maxcount']).",".htmlspecialchars($row['lootmode']); ?>);"><?php echo htmlspecialchars($row['groupid']); ?></td>
-<td OnClick="remove_target(); document.getElementById('<?php echo $count; ?>').className='target'; get_values(<?php echo $loot_id.",".htmlspecialchars($row['item']).",".htmlspecialchars($row['ChanceOrQuestChance']).",".htmlspecialchars($row['groupid']).",".htmlspecialchars($row['mincountOrRef']).",".htmlspecialchars($row['maxcount']).",".htmlspecialchars($row['lootmode']); ?>);"><?php echo htmlspecialchars($row['mincountOrRef']); ?></td>
-<td OnClick="remove_target(); document.getElementById('<?php echo $count; ?>').className='target'; get_values(<?php echo $loot_id.",".htmlspecialchars($row['item']).",".htmlspecialchars($row['ChanceOrQuestChance']).",".htmlspecialchars($row['groupid']).",".htmlspecialchars($row['mincountOrRef']).",".htmlspecialchars($row['maxcount']).",".htmlspecialchars($row['lootmode']); ?>);"><?php echo htmlspecialchars($row['maxcount']); ?></td>
-<td OnClick="remove_target(); document.getElementById('<?php echo $count; ?>').className='target'; get_values(<?php echo $loot_id.",".htmlspecialchars($row['item']).",".htmlspecialchars($row['ChanceOrQuestChance']).",".htmlspecialchars($row['groupid']).",".htmlspecialchars($row['mincountOrRef']).",".htmlspecialchars($row['maxcount']).",".htmlspecialchars($row['lootmode']); ?>);"><?php echo $item_name; ?></td>
+<tr id="<?php echo $count; ?>" OnClick="remove_target(); document.getElementById('<?php echo $count; ?>').className='target'; get_values(<?php echo $loot_id.",".htmlspecialchars($row['item']).",".htmlspecialchars($row['ChanceOrQuestChance']).",".htmlspecialchars($row['groupid']).",".htmlspecialchars($row['mincountOrRef']).",".htmlspecialchars($row['maxcount']).",".htmlspecialchars($row['lootmode']); ?>);">
+<td ><?php echo $loot_id; ?></td>
+<td ><?php echo htmlspecialchars($row['item']); ?></td>
+<td ><?php echo htmlspecialchars($row['ChanceOrQuestChance']); ?></td>
+<td ><?php echo htmlspecialchars($row['lootmode']); ?></td>
+<td ><?php echo htmlspecialchars($row['groupid']); ?></td>
+<td ><?php echo htmlspecialchars($row['mincountOrRef']); ?></td>
+<td ><?php echo htmlspecialchars($row['maxcount']); ?></td>
+<td ><?php echo $item_name; ?></td>
 </tr>
 <?php
 		}

@@ -2,6 +2,12 @@ table#configuration {
 	margin-top:10%;
 }
 
+.scroll
+{
+	overflow:auto;
+	height:70%;
+}
+
 .input_box {
 	width:90px;
 }

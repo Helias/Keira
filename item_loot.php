@@ -57,6 +57,6 @@ get_loot('item_loot_template', 'other');
 </td>
 </tr>
 </table>
-<script type="text/Javascript" src="creature_loot.js"></script>
+<script type="text/Javascript" src="loot_function.js"></script>
 </form>
 <p align="right"><input type="submit" value="Show Item Loot Script" OnClick="Scripts('item_loot_template')"></p>

@@ -17,7 +17,10 @@ $x=$_POST['x'];
 <tr>
 <td><input type="text" name="entry"></td>
 <td><input type="text" name="name"></td>
+<td><input type="submit" value="Search"></td>
 </tr>
+</table>
+<div class="scroll">
 <table border="1">
 	<tr>
 		<td>Entry</td>
@@ -59,6 +62,5 @@ $x=$_POST['x'];
 		</td>
 	</tr>
 </table>
-</table>
-<p align="left"><input type="submit" value="Search"></p>
+</div>
 </form>

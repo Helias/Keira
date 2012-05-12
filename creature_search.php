@@ -16,8 +16,10 @@ include "creature_menu.php";
 		<td><input type="text" name="Entry"></td>
 		<td><input type="text" name="Name" style="width: 300px;"></td>
 		<td><input type="text" name="Subname" style="width: 300px;"></td>
+		<td><input type="submit" value="Search"></td>
 	</tr>
 </table>
+<div class="scroll">
 <table border="1">
 	<tr>
 		<td>Entry</td>
@@ -71,4 +73,5 @@ include "creature_menu.php";
 		</td>
 	</tr>
 </table>
-<p align="left"><input type="submit" value="Search"></p></form>
+</div>
+</form>

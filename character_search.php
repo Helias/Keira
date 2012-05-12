@@ -22,8 +22,10 @@ if (!$Databases)
 <td><input type="text" name="guid"></td>
 <td><input type="text" name="account"></td>
 <td><input type="text" name="name"></td>
+<td><input type="submit" value="Search"></td>
 </tr>
 </table>
+<div class="scroll">
 <table border="1">
 <tr>
 <td>Guid</td>
@@ -68,5 +70,5 @@ while ($row=mysql_fetch_array($query) AND $x==1)
 }
 ?>
 </table>
-<p align="left"><input type="submit" value="Search"></p>
+</div>
 </form>
