@@ -7,7 +7,7 @@
 		<td><input type="submit" value="Prospecting Loot" OnClick="location.href='prospecting_loot.php'"></td>
 		<td><input type="submit" value="Milling Loot" OnClick="location.href='milling_loot.php'"></td>
 		<td><input type="submit" value="Reference Loot" OnClick="location.href='reference_loot.php'"></td>
-		<td><input type="submit" value="Enchantment" OnClick="location.href='enchantment.php'"></td>
+		<td><input type="submit" value="Enchantment" OnClick="location.href='item_enchantment.php'"></td>
 		<td><input type="submit" value="Looted From" OnClick="location.href='looted_from.php'"></td>
 		<td><input type="submit" value="Involved in" OnClick="location.href='item_involved_in.php'"></td>
 	</tr>

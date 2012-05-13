@@ -85,7 +85,7 @@ function add()
 	var mincountOrRef=document.getElementById("mincountOrRef").value;
 	var maxcount=document.getElementById("maxcount").value;
 	var lootmode=document.getElementById("lootmode").value;
-	if ((item != "") && (ChanceOrQuestChance != "") && (groupid != "") && (mincountOrRef != "") && (maxcount != "") && (lootmode != ""))
+	if ((loot_id != "") && (item != "") && (ChanceOrQuestChance != "") && (groupid != "") && (mincountOrRef != "") && (maxcount != "") && (lootmode != ""))
 	{
 		var table=document.getElementById("loot");
 		var check=true;
@@ -112,13 +112,7 @@ function add()
 			var td5=tr.insertCell(5);
 			var td6=tr.insertCell(6);
 			tr.id=table.rows.length-1;
-			td0.onclick=function() { remove_target(); tr.className='target'; get_values(loot_id, item, ChanceOrQuestChance, lootmode, groupid, mincountOrRef, maxcount); }
-			td1.onclick=function() { remove_target(); tr.className='target'; get_values(loot_id, item, ChanceOrQuestChance, lootmode, groupid, mincountOrRef, maxcount); }
-			td2.onclick=function() { remove_target(); tr.className='target'; get_values(loot_id, item, ChanceOrQuestChance, lootmode, groupid, mincountOrRef, maxcount); }
-			td3.onclick=function() { remove_target(); tr.className='target'; get_values(loot_id, item, ChanceOrQuestChance, lootmode, groupid, mincountOrRef, maxcount); }
-			td4.onclick=function() { remove_target(); tr.className='target'; get_values(loot_id, item, ChanceOrQuestChance, lootmode, groupid, mincountOrRef, maxcount); }
-			td5.onclick=function() { remove_target(); tr.className='target'; get_values(loot_id, item, ChanceOrQuestChance, lootmode, groupid, mincountOrRef, maxcount); }
-			td6.onclick=function() { remove_target(); tr.className='target'; get_values(loot_id, item, ChanceOrQuestChance, lootmode, groupid, mincountOrRef, maxcount); }
+			tr.onclick=function() { remove_target(); tr.className='target'; get_values(loot_id, item, ChanceOrQuestChance, lootmode, groupid, mincountOrRef, maxcount); }
 			td0.innerHTML=loot_id;
 			td1.innerHTML=item;
 			td2.innerHTML=ChanceOrQuestChance;
@@ -133,6 +127,7 @@ function add()
 	else
 	{
 		var message="Fill the box of:";
+		if (loot_id == "") {message+=" entry";}
 		if (item == "") { message+=" item"; }
 		if (ChanceOrQuestChance == "") { message+=" ChanceOrQuestChance"; }
 		if (groupid == "") { message+=" groupid"; }
@@ -155,7 +150,7 @@ function exchange()
 	var mincountOrRef=document.getElementById("mincountOrRef").value;
 	var maxcount=document.getElementById("maxcount").value;
 	var check=true;
-	if ((item != "") && (ChanceOrQuestChance != "") && (groupid != "") && (mincountOrRef != "") && (maxcount != "") && (lootmode != ""))
+	if ((loot_id != "") && (item != "") && (ChanceOrQuestChance != "") && (groupid != "") && (mincountOrRef != "") && (maxcount != "") && (lootmode != ""))
 	{
 		if(item != tr.cells[1].innerHTML)
 		{
@@ -189,6 +184,7 @@ function exchange()
 	else
 	{
 		var message="Fill the box of:";
+		if (loot_id == "") { message+=" entry"; }
 		if (item == "") { message+=" item"; }
 		if (ChanceOrQuestChance == "") { message+=" ChanceOrQuestChance"; }
 		if (groupid == "") { message+=" groupid"; }
