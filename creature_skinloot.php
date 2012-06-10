@@ -5,6 +5,7 @@ include "creature_menu.php";
 include "loot_function.php";
 ?>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
+<div class="scroll">
 <table border="1" id="loot">
 <tr>
 <td>Entry</td>
@@ -20,6 +21,7 @@ include "loot_function.php";
 get_loot('skinning_loot_template', 'skinloot');
 ?>
 </table>
+</div>
 <input type="hidden" name="entry" value="<?php echo $entry; ?>">
 <table>
 <tr>

@@ -2,14 +2,20 @@ table#configuration {
 	margin-top:10%;
 }
 
+input {
+	opacity:0.1;
+}
+
 .scroll
 {
 	overflow:auto;
 	height:70%;
+	opacity:0.1;
 }
 
 .input_box {
 	width:90px;
+	opacity:0.1;
 }
 
 .bold {
@@ -36,7 +42,7 @@ table#configuration {
 	display:none;
 }
 /*
-input {
+input,textarea {
 	color:#00ff00;
 	background-color:green;
 	border-color:#00fff2;
