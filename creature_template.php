@@ -15,7 +15,7 @@ while ($row=mysql_fetch_array($query))
 {
 if ($entry == "")
 {
-	$entry="Write Entry";
+	$entry="";
 	$row="";
 }
 ?>
@@ -155,8 +155,8 @@ if ($entry == "")
 <tr>
 <td><input type="text" value="<?php echo htmlspecialchars($row['questItem1']); ?>" style="width: 150px; height:23px;" name="questItem1"></td>
 <td><input type="text" value="<?php echo htmlspecialchars($row['questItem2']); ?>" style="width: 150px; height:23px;" name="questItem2"></td>
-<td><input type="text" value="<?php echo htmlspecialchars($row['mechanic_immune_mask']); ?>" style="width: 150px; height:23px;" name="mechanic_immune_masks">
-<select class="little" id="mechanic_immune_mask" OnChange="get_value_flag(this.id, 'mechanic_immune_masks')">
+<td><input type="text" value="<?php echo htmlspecialchars($row['mechanic_immune_mask']); ?>" style="width: 150px; height:23px;" name="mechanic_immune_mask">
+<select class="little" id="mechanic_immune_mask" OnChange="get_value_flag(this.id)">
 <option value="-1" selected="selected" disabled="disabled" class="bold">Mechanic</option>
 <option value="1">CHARM</option>
 <option value="2">DISORIENTED</option>
@@ -215,39 +215,8 @@ if ($entry == "")
 </table>
 <input type="hidden" name="code">
 </form>
+<script src="js_function.js"></script>
 <script type="text/javascript">
-function get_value_flag(select, name)
-{
-	var Element=document.getElementsByName(name)[0];
-	selects=document.getElementById(select);
-	if (selects.options[selects.selectedIndex].className != "target")
-	{
-		selects.options[selects.selectedIndex].className="target";
-		for (var i=1; i<selects.options.length; i++)
-		{
-			if(selects.options[i].className != "target")
-			{
-				Element.value=parseInt(Element.value)+parseInt(selects.options[selects.selectedIndex].value);
-				break;
-			}
-			else
-			{
-				if(i==selects.options.length-1)
-				{
-					Element.value="-1";
-				}
-			}
-		}
-		selects.selectedIndex=0;
-	}
-	else if (selects.options[selects.selectedIndex].className=="target")
-	{
-		Element.value=parseInt(Element.value)-parseInt(selects.options[selects.selectedIndex].value);
-		selects.options[selects.selectedIndex].className="";
-		selects.selectedIndex=0;
-	}
-}
-
 function Scripts()
 {
 entry='<?php echo htmlspecialchars($row['entry']); ?>';
@@ -326,7 +295,7 @@ if (form.questItem3.value != questItem3){Script+=" `questItem3`="+form.questItem
 if (form.questItem4.value != questItem4){Script+=" `questItem4`="+form.questItem4.value+",";}
 if (form.questItem5.value != questItem5){Script+=" `questItem5`="+form.questItem5.value+",";}
 if (form.questItem6.value != questItem6){Script+=" `questItem6`="+form.questItem6.value+",";}
-if (form.mechanic_immune_masks .value != mechanic_immune_mask ){Script+=" `mechanic_immune_mask`="+form.mechanic_immune_masks .value+",";}
+if (document.getElementsByName("mechanic_immune_mask")[0].value != mechanic_immune_mask ){Script+=" `mechanic_immune_mask`="+document.getElementsByName("mechanic_immune_mask")[0].value+",";}
 if (form.PetSpellDataId.value != PetSpellDataId){Script+=" `PetSpellDataId`="+form.PetSpellDataId.value+",";}
 if (form.flags_extra.value != flags_extra){Script+=" `flags_extra`="+form.flags_extra.value+",";}
 Where=" WHERE `entry`="+entry;

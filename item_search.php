@@ -15,7 +15,7 @@ $x=$_POST['x'];
 <td>Name</td>
 </tr>
 <tr>
-<td><input type="text" name="entry"></td>
+<td><input type="text" name="entry" style="width:125px;"></td>
 <td><input type="text" name="name"></td>
 <td><input type="submit" value="Search"></td>
 </tr>

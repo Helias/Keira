@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="./style.css">
-<form action="Connect.php" method="post" name="connect" OnSubmit="return config(this)">
+<script type="text/javascript" src="./fade.js"></script>
+<form action="Connect.php" method="post" name="connect" OnSubmit="return config(this)" OnLoad="opacity();">
 <center>
 <title>Configuration</title>
 <table border="1" id="configuration" width="40%" height="40%">
@@ -109,4 +110,5 @@ else
 }
 }
 ?>
+<script type="text/javascript">opacity();</script>
 </center>

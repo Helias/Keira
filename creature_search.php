@@ -13,7 +13,7 @@ include "creature_menu.php";
 		<td>Subname</td>
 	</tr>
 	<tr>
-		<td><input type="text" name="Entry"></td>
+		<td><input type="text" name="Entry" style="width:125px;"></td>
 		<td><input type="text" name="Name" style="width: 300px;"></td>
 		<td><input type="text" name="Subname" style="width: 300px;"></td>
 		<td><input type="submit" value="Search"></td>

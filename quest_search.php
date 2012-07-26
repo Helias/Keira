@@ -12,7 +12,7 @@ include "quest_menu.php";
 		<td>Title</td>
 	</tr>
 	<tr>
-		<td><input type="text" name="Id"></td>
+		<td><input type="text" name="Id" style="width:125px;"></td>
 		<td><input type="text" name="Title" style="width: 300px;"></td>
 		<td><input type="submit" value="Search"></td>
 	</tr>

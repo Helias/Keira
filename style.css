@@ -2,20 +2,19 @@ table#configuration {
 	margin-top:10%;
 }
 
-input {
+td {
 	opacity:0.1;
 }
 
 .scroll
 {
 	overflow:auto;
-	height:70%;
+	height:60%;
 	opacity:0.1;
 }
 
 .input_box {
-	width:90px;
-	opacity:0.1;
+	width:80px;
 }
 
 .bold {

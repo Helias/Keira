@@ -11,7 +11,7 @@ if (!$Databases)
 $guid=$_GET['guid'];
 if ($guid== "")
 {
-	$query=mysql_query("SELECT * FROM characters");
+	$query=mysql_query("SELECT * FROM characters WHERE guid=1");
 }
 else
 {
@@ -58,12 +58,14 @@ td {
 <td><input class="input_box" type="text" value="<?php echo $guid; ?>" name="guid" style="width: 100px;"><input type="submit" value=""></td>
 <td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['account']); ?>" name="account"></td>
 <td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['name']); ?>" name="name"></td>
-<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['race']); ?>" name="races">
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['race']); ?>" name="race">
 <select class="little" id="race" OnChange="get_value(this.id)">
 <option value="ID Value" disabled="disabled" class="bold">ID Value</option>
-<option value="1">1 Human</option><option value="2">
-2  Orc</option><option  value="3">3 Dwarf</option>
-<option value="4">4 Night Elf</option><option  value="5">5 Scourge</option>
+<option value="1">1 Human</option>
+<option value="2">2  Orc</option>
+<option  value="3">3 Dwarf</option>
+<option value="4">4 Night Elf</option>
+<option  value="5">5 Scourge</option>
 <option value="6">6 Tauren</option>
 <option value="7">7 Gnome</option>
 <option value="8">8 Troll</option>
@@ -82,7 +84,7 @@ td {
 <option value="21">21 IceTroll</option>
 </select>
 </td>
-<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['class']); ?>" name="classes">
+<td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['class']); ?>" name="class">
 <select class="little" id="class" OnChange="get_value(this.id)">
 <option value="ID Value" disabled="disabled" class="bold">ID Value</option>
 <option value="1">1 Warrior</option>
@@ -184,7 +186,7 @@ td {
 </tr>
 <tr>
 <td><input class="input_box" type="text" value="<?php echo htmlspecialchars($row['activespec']); ?>" name="activespec"></td>
-<td><input type="text" class="input_box" value="<?php echo htmlspecialchars($row['map']) ?>" name="maps">
+<td><input type="text" class="input_box" value="<?php echo htmlspecialchars($row['map']) ?>" name="map">
 <select class="little" id="map" OnChange="get_value(this.id)">
 <option value="ID Value" disabled="disabled" class="bold">ID Value</option>
 <option value="0">0 Eastern Kingdoms</option>
@@ -194,12 +196,12 @@ td {
 <option value="30">30 Alterac Valley</option>
 <option value="33">33 Shadowfang Keep</option>
 <option value="34">34 Stormwind Stockade</option>
-<option value="35">35 <unused>StormwindPrison</option>
+<option value="35">35 &lt;unused&gt;StormwindPrison</option>
 <option value="36">36 Deadmines</option>
 <option value="37">37 Azshara Crater</option>
 <option value="42">42 Collin's Test</option>
 <option value="43">43 Wailing Caverns</option>
-<option value="44">44 <unused> Monastery</option>
+<option value="44">44 &lt;unused&gt; Monastery</option>
 <option value="47">47 Razorfen Kraul</option>
 <option value="48">48 Blackfathom Deeps</option>
 <option value="70">70 Uldaman</option>
@@ -2638,7 +2640,7 @@ td {
 <option value="4910">4910 Frostmourne</option>
 <option value="4987">4987 The Ruby Sanctum</option>
 </select>
-<input type="text" class="input_box" value="<?php echo htmlspecialchars($row['zone']) ?>" name="zones" style="width: 90px;"></td>
+<input type="text" class="input_box" value="<?php echo htmlspecialchars($row['zone']) ?>" name="zone" style="width: 90px;"></td>
 <td><input type="text" class="input_box" value="<?php echo htmlspecialchars($row['logout_time']) ?>" name="logout_time"></td>
 <td><input type="text" class="input_box" value="<?php echo htmlspecialchars($row['rest_bonus']) ?>" name="rest_bonus"></td>
 <td><input type="text" class="input_box" value="<?php echo htmlspecialchars($row['leveltime']) ?>" name="leveltime"></td>
@@ -2694,20 +2696,15 @@ td {
 </table>
 <input type="hidden" name="code">
 </form>
+<script src="js_function.js"></script>
 <script type="text/javascript">
-function get_value(select)
-{
-	selects=document.getElementById(select);
-	document.getElementsByName(select+"s")[0].value=selects.options[selects.selectedIndex].value;
-}
-
 function Scripts()
 {
 guid='<?php echo htmlspecialchars($row['guid']);?>';
 account='<?php echo htmlspecialchars($row['account']);?>';
 name='<?php echo htmlspecialchars($row['name']);?>';
 race='<?php echo htmlspecialchars($row['race']);?>';
-classes='<?php echo htmlspecialchars($row['class']);?>';
+classs='<?php echo htmlspecialchars($row['class']);?>';
 gender='<?php echo htmlspecialchars($row['gender']);?>';
 level='<?php echo htmlspecialchars($row['level']);?>';
 xp='<?php echo htmlspecialchars($row['xp']);?>';
@@ -2775,7 +2772,6 @@ deleteInfos_Name='<?php echo htmlspecialchars($row['deleteInfos_Name']);?>';
 deleteDate='<?php echo htmlspecialchars($row['deleteDate']);?>';
 
 Script="UPDATE `characters` SET";
-//checkbox
 var check;
 if (form.online.checked==false){check=0;} else { check=1; }
 if (form.online.checked != online){Script+=" `online`="+check+",";}
@@ -2787,8 +2783,8 @@ if (form.cinematic.checked != cinematic){Script+=" `cinematic`="+check+",";}
 if (form.guid.value != guid){Script+=" `guid`="+form.guid.value+",";}
 if (form.account.value != account){Script+=" `account`="+form.account.value+",";}
 if (form.name.value != name){Script+=" `name`='"+form.name.value+"',";}
-if (form.races.value != race){Script+=" `race`="+form.races.value+",";}
-if (form.classes.value != classes){Script+=" `class`="+form.classes.value+",";}
+if (document.getElementsByName("race")[0].value != race){Script+=" `race`="+document.getElementsByName("race")[0].value+",";}
+if (document.getElementsByName("class")[0].value != classs){Script+=" `class`="+document.getElementsByName("class")[0].value+",";}
 if (form.gender.value != gender){Script+=" `gender`="+form.gender.value+",";}
 if (form.level.value != level){Script+=" `level`="+form.level.value+",";}
 if (form.xp.value != xp){Script+=" `xp`="+form.xp.value+",";}
@@ -2799,7 +2795,7 @@ if (form.playerFlags.value != playerFlags){Script+=" `playerFlags`="+form.player
 if (form.position_x.value != position_x){Script+=" `position_x`="+form.position_x.value+",";}
 if (form.position_y.value != position_y){Script+=" `position_y`="+form.position_y.value+",";}
 if (form.position_z.value != position_z){Script+=" `position_z`="+form.position_z.value+",";}
-if (form.maps.value != map){Script+=" `map`="+form.maps.value+",";}
+if (document.getElementsByName("map")[0].value != map){Script+=" `map`="+document.getElementsByName("map")[0].value+",";}
 if (form.instance_id.value != instance_id){Script+=" `instance_id`="+form.instance_id.value+",";}
 if (form.instance_mode_mask.value != instance_mode_mask){Script+=" `instance_mode_mask`="+form.instance_mode_mask.value+",";}
 if (form.orientation.value != orientation){Script+=" `orientation`="+form.orientation.value+",";}
@@ -2818,7 +2814,7 @@ if (form.transguid.value != transguid){Script+=" `transguid`="+form.transguid.va
 if (form.extra_flags.value != extra_flags){Script+=" `extra_flags`="+form.extra_flags.value+",";}
 if (form.stable_slots.value != stable_slots){Script+=" `stable_slots`="+form.stable_slots.value+",";}
 if (form.at_login.value != at_login){Script+=" `at_login`="+form.at_login.value+",";}
-if (form.zones.value != zone){Script+=" `zone`="+form.zones.value+",";}
+if (document.getElementsByName("zone")[0].value != zone){Script+=" `zone`="+document.getElementsByName("zone")[0].value+",";}
 if (form.death_expire_time.value != death_expire_time){Script+=" `death_expire_time`="+form.death_expire_time.value+",";}
 if (form.taxi_path.value != taxi_path){Script+=" `taxi_path`="+form.taxi_path.value+",";}
 if (form.arenaPoints.value != arenaPoints){Script+=" `arenaPoints`="+form.arenaPoints.value+",";}

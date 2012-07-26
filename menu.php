@@ -25,33 +25,6 @@ if (!(include "db-config.php"))
 		<td><p><input type="submit" value="" style="width: 600px; height:0.5px;"></p></td>
 	</tr>
 </table>
-<script type="text/javascript">
-function opacity()
-{
-	for (var i=0; i<document.getElementsByTagName("input").length; i++)
-	{
-		setTimeout('document.getElementsByTagName("input")['+i+'].style.opacity="0.2";', 200);
-		setTimeout('document.getElementsByTagName("input")['+i+'].style.opacity="0.3";', 300);
-		setTimeout('document.getElementsByTagName("input")['+i+'].style.opacity="0.4";', 400);
-		setTimeout('document.getElementsByTagName("input")['+i+'].style.opacity="0.5";', 500);
-		setTimeout('document.getElementsByTagName("input")['+i+'].style.opacity="0.6";', 600);
-		setTimeout('document.getElementsByTagName("input")['+i+'].style.opacity="0.7";', 700);
-		setTimeout('document.getElementsByTagName("input")['+i+'].style.opacity="0.8";', 800);
-		setTimeout('document.getElementsByTagName("input")['+i+'].style.opacity="0.9";', 900);
-		setTimeout('document.getElementsByTagName("input")['+i+'].style.opacity="1";', 1000);
-	}
-	
-	var object=document.getElementsByClassName("scroll")[0];
-	setTimeout('document.getElementsByClassName("scroll")[0].style.opacity="0.2";', 200);
-	setTimeout('document.getElementsByClassName("scroll")[0].style.opacity="0.3";', 300);
-	setTimeout('document.getElementsByClassName("scroll")[0].style.opacity="0.4";', 400);
-	setTimeout('document.getElementsByClassName("scroll")[0].style.opacity="0.5";', 500);
-	setTimeout('document.getElementsByClassName("scroll")[0].style.opacity="0.6";', 600);
-	setTimeout('document.getElementsByClassName("scroll")[0].style.opacity="0.7";', 700);
-	setTimeout('document.getElementsByClassName("scroll")[0].style.opacity="0.8";', 800);
-	setTimeout('document.getElementsByClassName("scroll")[0].style.opacity="0.9";', 900);
-	setTimeout('document.getElementsByClassName("scroll")[0].style.opacity="1";', 1000);
-}
-</script>
+<script type="text/javascript" src="./fade.js"></script>
 <body OnLoad="opacity();">
 </body>

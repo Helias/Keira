@@ -19,7 +19,7 @@ if (!$Databases)
 <td>Name</td>
 </tr>
 <tr>
-<td><input type="text" name="guid"></td>
+<td><input type="text" name="guid" style="width:125px;"></td>
 <td><input type="text" name="account"></td>
 <td><input type="text" name="name"></td>
 <td><input type="submit" value="Search"></td>
