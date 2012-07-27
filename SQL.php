@@ -201,7 +201,7 @@ function adapt_tables(sel)
 		document.getElementById("columns").selectedIndex=document.getElementById(select.options[select.selectedIndex].id).className;
 	}
 	
-	document.getElementById("where").selectedIndex=document.getElementById(select.options[select.selectedIndex].id).className;
+	document.getElementById("where").selectedIndex=document.getElementById(select.options[select.selectedIndex].id).className-1;
 	refresh_script();
 }
 </script>
