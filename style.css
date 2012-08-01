@@ -6,6 +6,10 @@ td {
 	opacity:0.1;
 }
 
+.nofade {
+	opacity:1;
+}
+
 .scroll
 {
 	overflow:auto;
